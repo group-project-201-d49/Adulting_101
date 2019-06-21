@@ -2,8 +2,6 @@
 Final Project Repo Initiation (*to be updated) 
 
 ## Project title
-Pat's Salmon Cookies E-Storefront
-(lab06 Code Fellows 201 Salmon Cookies)
 
 ## Motivation
 
