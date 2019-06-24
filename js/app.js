@@ -16,20 +16,8 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
 var user = {
-  name: ' ';
+  name: ' '
 }
-
-user.
-
-//Constructor function for skills
-function skillTasks (skillsName, link)
-  this.skillName = skillName
-  this.link = link;
-  this.skillCompl = 0;
-  skillTasks.list.push(this);
-
-//Array of skills for each card
-skillTasks.list = [];
 
 /**
  * Constructor function for cards
@@ -37,11 +25,24 @@ skillTasks.list = [];
  * @param {*} topic Describes the topic title for the card and its content
  */
 
-function CardTopic (topic, skillTasks.list[i]) {
-  this.topic = topic;
+function CardTopic (topicName) {
+  this.topicName = topicName;
+  this.topicSkillList = [];
+  var skillComplete = 0;
   CardTopic.list.push(this);
 }
 
 //Array of card topics
 CardTopic.list =[];
 
+//Prototype to add skills to each card
+CardTopic.prototype.newSkill(skillName, link) {
+  this.topicSkillList.push(skill);
+}
+
+//Prototype to count completion of the skill for each card
+CardTopic.prototype.skillsComplete {
+
+}
+
+//Prototype to count completion of the skills across topics (total skills completed)
