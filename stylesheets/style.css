@@ -20,7 +20,7 @@ main {
 
 h1 {
   border: solid orange;
-  display: inline-block; 
+  display: block; 
   text-align: center;
 }
 

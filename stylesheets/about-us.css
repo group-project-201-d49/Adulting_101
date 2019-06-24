@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border: solid black;
+  margin: auto; 
+  width: 960px; 
+}
+
+header {
+  border: solid red;
+  padding: 10px;
+}
+
+main {
+  border: solid yellow;
+  padding: 10px; 
+  width: 100%;
+  background: gray;
+  padding: 10px;
+  height: 300px;
+  position: relative;
+  float: left;
+}
+
+h1 {
+  border: solid orange;
+  display: block; 
+  text-align: center;
+}
+
+h2 {
+  border: solid pink;
+  display: inline-block;
+}
+
+footer {
+  border: solid green; 
+  padding: 10px; 
+}
+
+nav {
+  float: right;
+}
+
+ul {
+  border: solid blue;
+  text-decoration: none;
+  list-style: none;
+  padding: 5px;
+}
+
+li {
+  display: inline;
+}
+
+div {
+  border: solid purple;
+}
+
+div {
+  border: solid purple;
+  width: 45%;
+}
+
+.gina {
+  float: left;
+}
+
+.jon {
+  float: right;
+}
+
+.lyndsey {
+  float: left;
+}
+
+.sarah {
+  float: right;
+}
+
