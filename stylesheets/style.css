@@ -1,4 +1,81 @@
-body {
-  background: peachpuff;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  border: solid black;
+  margin: auto; 
+  width: 960px; 
+}
+
+header {
+  border: solid red;
+  padding: 10px;
+}
+
+main {
+  border: solid yellow;
+  padding: 10px; 
+}
+
+h1 {
+  border: solid orange;
+  display: inline-block; 
+  text-align: center;
+}
+
+footer {
+  border: solid green; 
+  padding: 10px; 
+}
+
+ul {
+  border: solid blue;
+  text-decoration: none;
+  list-style: none;
+  padding: 5px;
+}
+
+li {
+  display: inline;
+}
+
+div {
+  border: solid purple;
+}
+
+.status {
+  border: solid pink; 
+}
+
+nav {
+  float: right;
+}
+
+.container {
+  width: 100%;
+  background: gray;
+  padding: 10px;
+  height: 300px;
+  position: relative;
+  float: left;
+  font-weight: bold;
+}
+
+.flip-container {
+  display: inline-block;
+  width: 33%;
+  object-fit: contain;
+}
+
+.flip-card1 {
+  float: left;
+}
+
+.flip-card2 {
+  float: right;
+}
+
+.flip-card3 {
+  float: right;
+}
