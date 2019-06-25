@@ -4,34 +4,28 @@
 }
 
 body {
-  border: solid black;
+  /* border: solid black; */
   margin: auto; 
   width: 100%; 
+  font-family: sans-serif;
 }
 
-header {
-  border: solid red;
-  padding: 10px;
-}
-
-main {
-  border: solid yellow;
-  padding: 10px;
-}
 
 h1 {
-  border: solid orange;
   display: block; 
   text-align: center;
+  background: #ffbe0a;
+  top: 0;
+  height: 70px;
 }
 
 footer {
-  border: solid green; 
+  /* border: solid green;  */
   padding: 10px; 
 }
 
 ul {
-  border: solid blue;
+  /* border: solid blue; */
   text-decoration: none;
   list-style: none;
   padding: 5px;
@@ -43,14 +37,25 @@ li {
 
 .front  {
   border: solid #990000 15px; 
+  text-align: center;
+  font-weight: bold;
+  line-height: 75px; 
+  font-size: 20px;
+  background: #ffbe0a;
 }
 
-.status {
-  border: solid pink; 
+.back {
+  border: solid #990000 15px; 
+}
+
+#status {
+  /* border: solid pink; */
+  display: block;
 }
 
 nav {
   float: right;
+  display: block;
 }
 
 .container {
@@ -135,6 +140,7 @@ nav {
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+/* TODO: MAKE SHOW CLICK FUNCTION INSTEAD OF MOUSEOVER */
 .back{
   position: absolute;
   top: 0;
@@ -144,8 +150,10 @@ nav {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #fafafa;
-  color: #333;
+  background: #ffbe0a;
+  opacity: .60; 
+  color: #000;
+  /* color: #333; */
   text-align: center;
   transform: rotateY(180deg);
 }
