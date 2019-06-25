@@ -1,36 +1,32 @@
 * {
   box-sizing: border-box;
+  background-color: #FFFAFA;
 }
 
 body {
-  border: solid black;
+  /* border: solid black; */
   margin: auto; 
-  width: 960px; 
+  width: 100%; 
+  font-family: sans-serif;
 }
 
-header {
-  border: solid red;
-  padding: 10px;
-}
-
-main {
-  border: solid yellow;
-  padding: 10px;
-}
 
 h1 {
-  border: solid orange;
   display: block; 
   text-align: center;
+  background: #ffbe0a;
+  top: 0;
+  height: 75px;
+  margin: 0px;
 }
 
-footer {
+/* footer {
   border: solid green; 
   padding: 10px; 
-}
+} */
 
 ul {
-  border: solid blue;
+  /* border: solid blue; */
   text-decoration: none;
   list-style: none;
   padding: 5px;
@@ -40,23 +36,34 @@ li {
   display: inline;
 }
 
-div {
-  border: solid purple;
+.front  {
+  border: solid #990000 15px; 
+  text-align: center;
+  font-weight: bold;
+  line-height: 75px; 
+  font-size: 20px;
+  background: #ffbe0a;
 }
 
-.status {
-  border: solid pink; 
+.back {
+  border: solid #990000 15px; 
 }
+
+/* #status {
+  border: solid pink;
+  display: block;
+} */
 
 nav {
   float: right;
+  display: block;
 }
 
 .container {
   width: 100%;
-  background: rgb(241, 191, 191);
+  /* background: rgb(241, 191, 191); */
   padding: 10px;
-  height: 300px;
+  height: 350px;
   position: relative;
   float: left;
   font-weight: bold;
@@ -64,20 +71,22 @@ nav {
 
 .flip-container {
   display: inline-block;
-  width: 33%;
   object-fit: contain;
 }
 
 .flip-card1 {
   float: left;
+  width: 30%;
 }
 
 .flip-card2 {
   float: right;
+  width: 30%;
 }
 
 .flip-card3 {
   float: right;
+  width: 30%;
 }
 
 
@@ -98,12 +107,15 @@ nav {
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 .flip-container {
+  /* padding: 5px; */
+  margin: 5px;
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 25%;
   height: 100%;
   border-radius: 10px;
+  border-color: black;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
 }
@@ -123,11 +135,13 @@ nav {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #ffc728;
+  background: #ffbe0a;
+  opacity: .75; 
   color: #000;
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+/* TODO: MAKE SHOW CLICK FUNCTION INSTEAD OF MOUSEOVER */
 .back{
   position: absolute;
   top: 0;
@@ -137,8 +151,10 @@ nav {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #fafafa;
-  color: #333;
+  background: #ffbe0a;
+  opacity: .60; 
+  color: #000;
+  /* color: #333; */
   text-align: center;
   transform: rotateY(180deg);
 }
