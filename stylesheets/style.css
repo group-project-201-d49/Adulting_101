@@ -16,13 +16,14 @@ h1 {
   text-align: center;
   background: #ffbe0a;
   top: 0;
-  height: 70px;
+  height: 75px;
+  margin: 0px;
 }
 
-footer {
-  /* border: solid green;  */
+/* footer {
+  border: solid green; 
   padding: 10px; 
-}
+} */
 
 ul {
   /* border: solid blue; */
@@ -48,10 +49,10 @@ li {
   border: solid #990000 15px; 
 }
 
-#status {
-  /* border: solid pink; */
+/* #status {
+  border: solid pink;
   display: block;
-}
+} */
 
 nav {
   float: right;
