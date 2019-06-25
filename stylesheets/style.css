@@ -1,20 +1,19 @@
 * {
   box-sizing: border-box;
-  background-color: #FFFAFA;
 }
 
 body {
-  /* border: solid black; */
   margin: auto; 
   width: 100%; 
   font-family: sans-serif;
+  background-color: #ffbe0a;
 }
 
 
 h1 {
   display: block; 
   text-align: center;
-  background: #ffbe0a;
+  background-color: #FFFAFA;
   top: 0;
   height: 75px;
   margin: 0px;
@@ -26,7 +25,6 @@ h1 {
 } */
 
 ul {
-  /* border: solid blue; */
   text-decoration: none;
   list-style: none;
   padding: 5px;
@@ -42,7 +40,7 @@ li {
   font-weight: bold;
   line-height: 75px; 
   font-size: 20px;
-  background: #ffbe0a;
+  background: #FFFAFA;
 }
 
 .back {
@@ -135,7 +133,7 @@ nav {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #ffbe0a;
+  background: #FFFAFA;
   opacity: .75; 
   color: #000;
 }
@@ -151,7 +149,7 @@ nav {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #ffbe0a;
+  background: #FFFAFA;
   opacity: .60; 
   color: #000;
   /* color: #333; */
