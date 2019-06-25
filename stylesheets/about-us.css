@@ -15,7 +15,13 @@ header {
 
 main {
   border: solid yellow;
+  padding: 10px; 
+  width: 100%;
+  background: gray;
   padding: 10px;
+  height: 300px;
+  position: relative;
+  float: left;
 }
 
 h1 {
@@ -24,9 +30,18 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  border: solid pink;
+  display: inline-block;
+}
+
 footer {
   border: solid green; 
   padding: 10px; 
+}
+
+nav {
+  float: right;
 }
 
 ul {
@@ -44,38 +59,24 @@ div {
   border: solid purple;
 }
 
-.status {
-  border: solid pink; 
+div {
+  border: solid purple;
+  width: 45%;
 }
 
-nav {
-  float: right;
-}
-
-.container {
-  width: 100%;
-  background: rgb(241, 191, 191);
-  padding: 10px;
-  height: 300px;
-  position: relative;
-  float: left;
-  font-weight: bold;
-}
-
-.flip-container {
-  display: inline-block;
-  width: 33%;
-  object-fit: contain;
-}
-
-.flip-card1 {
+.gina {
   float: left;
 }
 
-.flip-card2 {
+.jon {
   float: right;
 }
 
-.flip-card3 {
+.lyndsey {
+  float: left;
+}
+
+.sarah {
   float: right;
 }
+

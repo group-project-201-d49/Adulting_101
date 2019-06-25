@@ -40,6 +40,7 @@ Jonathan Kimball
 Gina Pultorak 
 Lyndsey Thomas
 https://meyerweb.com/eric/tools/css/reset/ CSS Reset Tool
+https://youtu.be/OV8MVmtgmoY CSS Card Flip Effect 
 
 
 ## License
