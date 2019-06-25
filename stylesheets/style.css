@@ -54,7 +54,7 @@ nav {
 
 .container {
   width: 100%;
-  background: gray;
+  background: rgb(241, 191, 191);
   padding: 10px;
   height: 300px;
   position: relative;
