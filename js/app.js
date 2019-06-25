@@ -154,7 +154,7 @@ function renderCard(aCardTopicIndex) {
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
 
   var front = addElement(flipCard, 'div', undefined, 'front');
-  addElement(front, 'span', card.topicName);
+  addElement(front, 'div', card.topicName);
   console.log(front);
   addElement(front, 'i', undefined, 'card-0');
 
