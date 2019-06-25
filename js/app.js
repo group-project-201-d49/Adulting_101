@@ -86,14 +86,15 @@ function createCards() {
 }
 
 /**
- * this renders one card
+ * this renders one card and returns the index for that card
  *
  */
-function renderCards() {
+function renderCard(aCardTopicIndex) {
   //locate container div document.getElementById CardDeck
   //use helper funct. add element to build out HTML with
-  var container = document.getElementById('CardDeck');
+  
   var flipContainer = addElement(container, 'div', undefined, 'flip-container');
+  
   // TODO add ontouchstart and add dynamically changing flipCard number
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
   
@@ -103,20 +104,27 @@ function renderCards() {
   
   var back = addElement(flipCard, 'div', undefined, 'back');
   var taskList = addElement(back, 'ul');
-
+  
   for (var i = 0; i < CardTopic.list[0].topicSkillList.length; i++) {
     var li = addElement(taskList, 'li');
     
     var checkBox = addElement(li, 'input', CardTopic.list[0].topicSkillList[i].skillName);
-
+    
     checkBox.type = 'checkbox';
-
+    
     checkBox.href = CardTopic.list[0].topicSkillList[i].link;
   }
 }
 
+function renderDeck() {
+  var container = document.getElementById('CardDeck');
+
+  for ()
+  
+}
+
 createCards();
-renderCards();
+renderCard();
 
 /**
  * This is a helper function to add an element with given tag name optional text and class names to the given parent
