@@ -19,6 +19,22 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
 //push user input to local storage
 
+
+var userName = 'userInput()';
+
+document.getElementById('submit-button').addEventListener('click', userInput);
+
+function userInput(e) {
+  e.preventDefault();
+  console.log('Im clicking');
+  console.log(e);
+  var name = document.getElementById('user-entry');
+  //document.setItem('guestName', 'name');
+  console.log(name);
+}
+userInput();
+
+
 // var userEntry = user data entered into <input>text user entry</input>
 
 // localStorage.setItem('textEntry', user entered input text (username) )
@@ -27,7 +43,7 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 // var data = localStorage.getItem('textEntry');
 
-var userName = [];
+// var userName = [];
 // getElementById('user-entry');
 
 // var storeUserName = function(){
