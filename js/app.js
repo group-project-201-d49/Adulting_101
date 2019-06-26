@@ -119,19 +119,19 @@ function Skill(aSkillName, aLink) {
  */
 function createCards() {
   var card = new CardTopic('Finance');
-  card.addSkill('Budgeting', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
-  card.addSkill('Retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
-  card.addSkill('Taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+  card.addSkill('Make a Budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
+  card.addSkill('Plan for Retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
+  card.addSkill('Prepare Your Own Taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
   var card = new CardTopic('Social');
-  card.addSkill('Skill 1', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
-  card.addSkill('Skill 2', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
-  card.addSkill('Skill 3', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+  card.addSkill('Learn Active Listening', 'https://www.forbes.com/sites/womensmedia/2012/11/09/10-steps-to-effective-listening/#1e7909df3891');
+  card.addSkill('Your Social Media Presence', 'https://www.youtube.com/watch?v=WHP649YFVRE');
+  card.addSkill('Having Good Body Language', 'https://liveboldandbloom.com/10/self-confidence/confident-body-language');
 
   var card = new CardTopic('Cooking');
-  card.addSkill('Skill 1', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
-  card.addSkill('Skill 2', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
-  card.addSkill('Skill 3', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+  card.addSkill('How to Boil Water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
+  card.addSkill('Basic Kitchen Knife Skills', 'https://www.youtube.com/watch?v=Ydc_SaQ_eRQ');
+  card.addSkill('Master Cooking an Egg', 'https://spoonuniversity.com/how-to/the-7-different-ways-you-can-cook-an-egg-because-college');
 }
 
 
