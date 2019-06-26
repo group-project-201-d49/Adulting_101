@@ -82,7 +82,7 @@ li {
 
 .flip-container {
     display: inline-block;
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 .flip-card1 {
@@ -103,10 +103,11 @@ li {
 
 .container {
     /* position: absolute; */
+    display: inline-block;
     background: none;
     height: 350px;
     font-weight: bold;
-    margin: 5% 10%;
+    margin: 5% auto;
     background: rgb(241, 191, 191);
 }
 
@@ -118,9 +119,9 @@ li {
     padding: 5px;
     margin: 5px;
     /* position: relative; */
-    top: 0;
-    left: 0;
-    width: 30%;
+    /* top: 0; */
+    /* left: 0; */
+    width: 250px;
     height: 350px;
     border-radius: 10px;
     border-color: black;

@@ -60,6 +60,7 @@ li {
 /* THE MAIN CONTAINER HOLDS EVERYTHING */
 .container {
     margin: 0 auto;
+    display: inline-block;
     padding: 1em;
     /* position: absolute; */
     /* width: 100%; */
@@ -77,7 +78,7 @@ li {
     position: static;
     /* top: 0; */
     /* left: 0; */
-    width: 40%;
+    width: 400px;
     height: 80%;
     border-radius: 10px;
     border-color: black;
