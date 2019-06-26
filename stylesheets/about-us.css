@@ -1,57 +1,41 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Varela Round', sans-serif;
-}
-
-body {
-    margin: auto;
-    width: 100%;
-}
-
-main {
-    padding: 10px;
-    width: 100%;
-    height: 800px;
-}
-
-/* FLIP CARD CSS */
+/* FLIP CARD CSS FOR ABOUT US */
 
 /* THE MAIN CONTAINER HOLDS EVERYTHING */
+
 .container {
-    margin: 0 auto;
-    display: inline-block;
-    padding: 1em;
     /* position: absolute; */
-    width: 100%;
-    height: 50%;
+    display: inline-block;
     background: none;
-    /* top: 5%; */
-    /* left: 5%; */
-}
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    margin: auto;
+  }
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
+
 .flip-container {
-    float: left;
-    margin: 20px;
-    position: static;
-    /* top: 0; */
-    /* left: 0; */
-    width: 400px;
-    /* width: 35%; */
-    height: 80%;
+    margin: 25px;
+    height: 450px;
+    top: 0;
+    left: 0;
+    width: 21%;
     border-radius: 10px;
+    border-color: black;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
     box-shadow: 0px 7px 15px 1px rgba(0, 0, 0, 0.5);
-}
+    display: inline-block;
+    object-fit: contain;
+  }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container:hover,
-.flip-container:focus-within {
+.flip-container:hover {
     transform: rotateY(180deg);
 }
 
 /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+
 .front {
     position: absolute;
     top: 0;
@@ -61,11 +45,29 @@ main {
     border-radius: 10px;
     backface-visibility: hidden;
     overflow: hidden;
-    background: #FFFAFA;
     opacity: .75;
     color: #000;
-    font-size: 30px;
     text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    background: #FFFAFA;
+  }
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.front h2,
+.back h2 {
+  padding: 30px 0 0 0;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+
+.front p,
+.back p {
+  padding: 0 30px;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
@@ -103,10 +105,6 @@ main {
 
 .sarah {
     float: right;
-}
-
-#lyndsey {
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
+    /* background: './assets/sarah_about_me.jpg';
+    background-size: contain; */
 }
