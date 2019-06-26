@@ -147,6 +147,7 @@ function renderCard(aCardTopicIndex) {
   console.log(flipContainer);
 
   flipContainer.onclick = function() {
+    console.log('I was clicked');
     this.classList.toggle('flipped');
   };
 
