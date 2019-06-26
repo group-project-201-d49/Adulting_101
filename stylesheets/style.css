@@ -1,60 +1,12 @@
-:root {
-    --background-color: grey;
-    --color: black;
-    --box-shadow: rgb(105, 105, 105);
-}
-
 * {
     box-sizing: border-box;
-    border: solid purple;
+    font-family: 'Varela Round', sans-serif;
+    /* border: solid purple; */
 }
 
 body {
-    margin: auto;
     width: 100%;
     font-family: sans-serif;
-    background-color: #ffbe0a;
-}
-
-header {
-    width: 100%;
-    background-color: #990000;
-}
-
-h1 {
-    display: block;
-    text-align: center;
-    padding: 30px;
-    /* margin: 0px; */
-    font-size: 45px;
-}
-
-nav {
-    width: 100%;
-    float: left;
-    background-color: rgb(138, 29, 138);
-}
-
-a {
-    padding: 10px;
-    font-size: 15px;
-}
-
-a:link {
-    color: rgb(0, 0, 0);
-}
-
-a:visited {
-    color: rgb(42, 42, 43);
-}
-
-nav>ul {
-    float: right;
-    font-weight: bold;
-    text-decoration: none;
-    list-style: none;
-    padding: 5px;
-    margin: 5px;
 }
 
 ul {
@@ -68,8 +20,6 @@ li {
 }
 
 .front {
-    border: solid #990000 15px;
-    padding: 60% 10%;
     text-align: center;
     font-weight: bold;
     font-size: 130%;
@@ -77,7 +27,10 @@ li {
 }
 
 .back {
-    border: solid #990000 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%;
+    background: #FFFAFA;
 }
 
 .flip-container {
@@ -109,10 +62,8 @@ li {
     font-weight: bold;
     margin: 5% auto;
     background: rgb(241, 191, 191);
+    overflow: hidden;
 }
-
-/* .container {
-} */
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 .flip-container {
@@ -123,11 +74,11 @@ li {
     /* left: 0; */
     width: 250px;
     height: 350px;
-    border-radius: 10px;
-    border-color: black;
+    width: 450px;
+    border: black 10px;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
-    box-shadow: 0px 7px 15px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 7px 15px 1px rgba(161, 70, 70, 0.5);
 
 }
 
@@ -155,7 +106,6 @@ li {
     border-radius: 10px;
     backface-visibility: hidden;
     overflow: hidden;
-    background: #FFFAFA;
     opacity: .75;
     color: #000;
 }
@@ -172,7 +122,6 @@ li {
     border-radius: 10px;
     backface-visibility: hidden;
     overflow: hidden;
-    background: #FFFAFA;
     opacity: .60;
     color: #000;
     /* color: #333; */
@@ -207,22 +156,20 @@ input {
 :checked+.front {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
+}
 
-    footer {
-        width: 100%;
-        text-align: right;
-    }
+footer {
+    width: 100%;
+    text-align: right;
+}
 
-    #status {
-        display: block;
-        border: solid #990000 5px;
-        background-color: rgb(138, 29, 138);
-        opacity: .9;
-        width: 100%;
-    }
+#status {
+    display: block;
+    width: 100%;
+}
 
-    h2 {
-        text-align: center;
-        font-size: 20px;
-        color: #000;
-    }
+h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+}

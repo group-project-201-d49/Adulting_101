@@ -1,61 +1,25 @@
 * {
     box-sizing: border-box;
-    border: solid purple;
+    font-family: 'Varela Round', sans-serif;
+}
+
+h2 {
+    text-align: center;
+
 }
 
 body {
-    border: solid black 8px;
     margin: auto;
     width: 100%;
 }
 
-header {
-    border: solid red;
-    padding: 10px;
-}
-
 main {
-    border: solid rgb(153, 0, 255) 8px;
     padding: 10px;
     width: 100%;
-    background: gray;
     height: 800px;
 }
 
-h1 {
-    border: solid orange;
-    display: block;
-    text-align: center;
-}
-
-h2 {
-    border: solid pink;
-    display: inline-block;
-}
-
-footer {
-    border: solid green;
-    padding: 10px;
-}
-
-nav {
-    float: right;
-}
-
-ul {
-    border: solid blue;
-    text-decoration: none;
-    list-style: none;
-    padding: 5px;
-}
-
-li {
-    display: inline;
-}
-
-
 /* FLIP CARD CSS */
-
 
 /* THE MAIN CONTAINER HOLDS EVERYTHING */
 .container {
@@ -63,7 +27,7 @@ li {
     display: inline-block;
     padding: 1em;
     /* position: absolute; */
-    /* width: 100%; */
+    width: 100%;
     height: 50%;
     background: none;
     /* top: 5%; */
@@ -72,16 +36,15 @@ li {
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 .flip-container {
-    /* padding: 5px; */
     float: left;
     margin: 20px;
     position: static;
     /* top: 0; */
     /* left: 0; */
     width: 400px;
+    /* width: 35%; */
     height: 80%;
     border-radius: 10px;
-    border-color: black;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
     box-shadow: 0px 7px 15px 1px rgba(0, 0, 0, 0.5);
@@ -106,6 +69,8 @@ li {
     background: #FFFAFA;
     opacity: .75;
     color: #000;
+    font-size: 30px;
+    text-align: center;
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
@@ -122,6 +87,8 @@ li {
     background: #FFFAFA;
     opacity: .60;
     color: #000;
+    font-size: 30px;
+    text-align: center;
     /* color: #333; */
     text-align: center;
     transform: rotateY(180deg);
