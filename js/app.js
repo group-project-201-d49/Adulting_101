@@ -23,7 +23,7 @@ document.getElementById('submit-button').addEventListener('click', textEntry);
 
 function textEntry(userName) {
   if (userName === 'string') {
-    
+    setItem(WHAT AM I SETTING HERE)
   }
 }
 
@@ -36,31 +36,30 @@ function test()
 
 test();
 
+var userEntry = user data entered into <input>text user entry</input>
 
-// var userEntry = user data entered into <input>text user entry</input>
+localStorage.setItem('textEntry', user entered input text (username) )
 
-// localStorage.setItem('textEntry', user entered input text (username) )
+localStorage.setItem('textEntry', userEntry);
 
-// localStorage.setItem('textEntry', userEntry);
+var data = localStorage.getItem('textEntry');
 
-// var data = localStorage.getItem('textEntry');
+var userName = [];
+getElementById('user-entry');
 
-// var userName = [];
-// getElementById('user-entry');
+var storeUserName = function(){
+  this.name = [];
+}
 
-// var storeUserName = function(){
-//   this.name = [];
-// }
-
-// storeUserName.prototype.setItem = function (userName, userTextEntry) {
-//   if (typeof userTextEntry !== "string") {
-//     {return;
-//     this.name[username] = userTextEntry;}
-// }
-//   storeUserName.prototype.getItem = function(userName) {
-//     return this.name[userName];
-//   }
-// }
+storeUserName.prototype.setItem = function (userName, userTextEntry) {
+  if (typeof userTextEntry !== "string") {
+    {return;
+    this.name[username] = userTextEntry;}
+}
+  storeUserName.prototype.getItem = function(userName) {
+    return this.name[userName];
+  }
+}
 
 
 /**
