@@ -49,10 +49,14 @@ li {
   border: solid #990000 15px; 
 }
 
-/* #status {
+#status {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+  position: relative;
   border: solid pink;
   display: block;
-} */
+}
 
 nav {
   float: right;
@@ -121,9 +125,13 @@ nav {
 }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container:hover{
+/* .flip-container:hover .flip-card-0 {
   transform: rotateY(180deg);
-}
+  background: teal;
+  box-shadow: 0 20px 20px blue;
+} */
+
+
 
 /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
  .front{
@@ -175,4 +183,14 @@ nav {
   font-weight: normal;
   font-size: 12px;
   text-align: center;
+}
+
+input {
+  /* display: none; */
+  z-index: 500;
+}
+
+:checked + .front {
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
 }

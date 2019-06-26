@@ -124,7 +124,7 @@ function createCards() {
   card.addSkill('Taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
   var card = new CardTopic('Social');
-  card.addSkill('Skill 1', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
+  card.addSkill('Active Listening', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
   card.addSkill('Skill 2', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
   card.addSkill('Skill 3', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
@@ -150,6 +150,15 @@ function renderCard(aCardTopicIndex) {
   var flipContainer = addElement(undefined, 'div', undefined, 'flip-container');
   console.log(flipContainer);
 
+  var frontClick = addElement(undefined, 'input', undefined, 'front-click');
+  frontClick.type = 'checkbox';
+  
+  
+  
+  
+  
+  
+  
   // TODO add ontouchstart and add dynamically changing flipCard number
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
 
@@ -157,10 +166,10 @@ function renderCard(aCardTopicIndex) {
   addElement(front, 'span', card.topicName);
   console.log(front);
   addElement(front, 'i', undefined, 'card-0');
-
+  
+  front.appendChild(frontClick);
   var back = addElement(flipCard, 'div', undefined, 'back');
   var taskList = addElement(back, 'ul');
-
 
   // For loop creating each of the rows on the back side of the card from the skill list (card.topicSkillList)
 
@@ -177,6 +186,7 @@ function renderCard(aCardTopicIndex) {
 
     var a = addElement(li,'a', skill.skillName);
     a.href = skill.link;
+    a.target = '_blank';
   }
   return flipContainer;
 }
