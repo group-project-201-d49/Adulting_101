@@ -64,6 +64,75 @@ div {
   width: 45%;
 }
 
+/* FLIP CARD CSS */
+-
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.container {
+    position: absolute;
+    width: 250px;
+    height: 320px;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.flip-container {
+    /* padding: 5px; */
+    margin: 5px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    border-color: black;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.flip-container:hover {
+    transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #FFFAFA;
+    opacity: .75;
+    color: #000;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+/* TODO: MAKE SHOW CLICK FUNCTION INSTEAD OF MOUSEOVER */
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #FFFAFA;
+    opacity: .60;
+    color: #000;
+    /* color: #333; */
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
 .gina {
   float: left;
 }
@@ -78,5 +147,11 @@ div {
 
 .sarah {
   float: right;
+}
+
+#lyndsey {
+  border-radius: 50%;
+  height: 75px; 
+  width: 75px;
 }
 
