@@ -1,11 +1,6 @@
-:root {
-    --background-color: rgb(179, 177, 177);
-    --color: black;
-    --box-shadow: rgb(105, 105, 105);
-}
-
 * {
     box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
 }
 
 body {
