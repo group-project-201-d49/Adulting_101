@@ -19,30 +19,30 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
 //push user input to local storage
 
-var userEntry = user data entered into <input>text user entry</input>
+// var userEntry = user data entered into <input>text user entry</input>
 
-localStorage.setItem('textEntry', user entered input text (username) )
+// localStorage.setItem('textEntry', user entered input text (username) )
 
-localStorage.setItem('textEntry', userEntry);
+// localStorage.setItem('textEntry', userEntry);
 
-var data = localStorage.getItem('textEntry');
+// var data = localStorage.getItem('textEntry');
 
 var userName = [];
-getElementById('user-entry');
+// getElementById('user-entry');
 
-var storeUserName = function(){
-  this.name = [];
-}
+// var storeUserName = function(){
+//   this.name = [];
+// }
 
-storeUserName.prototype.setItem = function (userName, userTextEntry) {
-  if (typeof userTextEntry !== "string") {
-    {return;
-    this.name[username] = userTextEntry;}
-}
-  storeUserName.prototype.getItem = function(userName) {
-    return this.name[userName];
-  }
-}
+// storeUserName.prototype.setItem = function (userName, userTextEntry) {
+//   if (typeof userTextEntry !== "string") {
+//     {return;
+//     this.name[username] = userTextEntry;}
+// }
+//   storeUserName.prototype.getItem = function(userName) {
+//     return this.name[userName];
+//   }
+// }
 
 
 /**
@@ -170,7 +170,7 @@ function renderCard(aCardTopicIndex) {
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
 
   var front = addElement(flipCard, 'div', undefined, 'front');
-  addElement(front, 'div', card.topicName);
+  addElement(front, 'h2', card.topicName);
   console.log(front);
   addElement(front, 'i', undefined, 'card-0');
 
@@ -215,7 +215,6 @@ function renderDeck() {
 
 //getUserName();
 createCards();
-renderDeck();
 
 /**
  * This is a helper function to add an element with given tag name optional text and class names to the given parent

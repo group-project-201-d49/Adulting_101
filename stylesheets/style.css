@@ -7,169 +7,39 @@
 body {
     width: 100%;
     font-family: sans-serif;
-}
-
-ul {
-    padding: 5px;
-    margin: 5px;
-}
-
-li {
-    display: block;
-    text-align: left;
-}
-
-.front {
-    text-align: center;
-    font-weight: bold;
-    font-size: 130%;
-    background: #FFFAFA;
-}
-
-.back {
-    text-align: center;
-    font-weight: bold;
-    font-size: 130%;
-    background: #FFFAFA;
-}
-
-.flip-container {
-    display: inline-block;
-    /* object-fit: contain; */
-}
-
-.flip-card1 {
-    width: 30%;
-}
-
-.flip-card2 {
-    width: 30%;
-}
-
-.flip-card3 {
-    width: 30%;
-}
-
-/* FLIP CARD CSS */
-
-/* THE MAINCONTAINER HOLDS EVERYTHING */
-
-.container {
-    /* position: absolute; */
-    display: inline-block;
-    background: none;
-    height: 350px;
-    font-weight: bold;
-    margin: 5% auto;
-    background: rgb(241, 191, 191);
-    overflow: hidden;
-}
-
-/* THE CARD HOLDS THE FRONT AND BACK FACES */
-.flip-container {
-    padding: 5px;
-    margin: 5px;
-    /* position: relative; */
-    /* top: 0; */
-    /* left: 0; */
-    width: 250px;
-    height: 350px;
-    width: 450px;
-    border: black 10px;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-    box-shadow: 0px 7px 15px 1px rgba(161, 70, 70, 0.5);
-
-}
-
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container.flipped {
-    transform: rotateY(180deg);
-    background: none;
-}
-
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container:hover {
-    transform: rotateY(180deg);
-    background: none;
-}
-
-
-/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
-
-.front {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    opacity: .75;
-    color: #000;
-}
-
-/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-/* TODO: MAKE SHOW CLICK FUNCTION INSTEAD OF MOUSEOVER */
-
-.back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    opacity: .60;
-    color: #000;
-    /* color: #333; */
-    text-align: center;
-    transform: rotateY(180deg);
-}
-
-/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
-.front h1,
-.back h1 {
-    font-family: 'zilla slab', sans-serif;
-    padding: 30px;
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-}
-
-.front p,
-.back p {
-    font-family: 'zilla slab', sans-serif;
-    padding: 30px;
-    font-weight: normal;
-    font-size: 12px;
-    text-align: center;
-}
-
-input {
-    /* display: none; */
-    z-index: 500;
-}
-
-:checked+.front {
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
+    margin: auto;
 }
 
 footer {
-    width: 100%;
-    text-align: right;
-}
-
-#status {
     display: block;
-    width: 100%;
-}
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+  }
+  
 
 h2 {
     text-align: center;
     font-size: 26px;
     color: #000;
-  }
+}
+
+
+h3 {
+    text-align: left;
+    font-size: 23px;
+    color: #000;
+}
+
+.container a:link {
+    color: black; 
+}
+  
+.container a:visited {
+    color: black; 
+}
+  
+.container a:hover {
+    /* color:#A657AE; */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
