@@ -19,19 +19,16 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
 //push user input to local storage
 
+// document.getElementById('submit-button').addEventListener('click', );
 
-var userName = 'userInput()';
-
-document.getElementById('submit-button').addEventListener('click', function(event){
+var form = document.getElementById('userLogin');
+var addUser = function(event) {
   event.preventDefault();
-  var x = event.target.entry.value;
-  console.log(x);
-  console.log('Im clicking');
-  console.log(event);
-  var name = document.getElementById('user-entry');
-  //document.setItem('guestName', 'name');
-  console.log(name);
-});
+  console.log(event.target.userName.value);
+  var userName = event.target.userName.value;
+  localStorage.setItem('Name', userName);
+  return userName;
+};
 
 /**
  * Constructor function for cards
