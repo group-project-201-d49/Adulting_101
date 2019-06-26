@@ -16,19 +16,36 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 //Global functions
 
-var userName = '';
-
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
-function getUserName() {
-  var aUser = 'Push it';
-  // prompt ('Hey baby! What\'s your name?');
-  //send username to LS
-  userName = aUser;
-  // return alert ('Hi ' + userName + ', welcome to Adulting 101! Are you ready to Adult?');
-  //function that gets UserName to call on name globally
+//push user input to local storage
+
+var userEntry = user data entered into <input>text user entry</input>
+
+localStorage.setItem('textEntry', user entered input text (username) )
+
+localStorage.setItem('textEntry', userEntry);
+
+var data = localStorage.getItem('textEntry');
+
+var userName = [];
+getElementById('user-entry');
+
+var storeUserName = function(){
+  this.name = [];
 }
 
-// setUserName();
+storeUserName.prototype.setItem = function (userName, userTextEntry) {
+  if (typeof userTextEntry !== "string") {
+    {return;
+    this.name[username] = userTextEntry;}
+}
+  storeUserName.prototype.getItem = function(userName) {
+    return this.name[userName];
+  }
+}
+
+
+
 
 /**
  * Constructor function for cards
@@ -198,7 +215,7 @@ function renderDeck() {
   }
 }
 
-getUserName();
+//getUserName();
 createCards();
 renderDeck();
 
