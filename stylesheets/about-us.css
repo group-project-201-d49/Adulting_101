@@ -5,7 +5,7 @@
 
 h2 {
     text-align: center;
-    
+
 }
 
 body {
@@ -24,6 +24,7 @@ main {
 /* THE MAIN CONTAINER HOLDS EVERYTHING */
 .container {
     margin: 0 auto;
+    display: inline-block;
     padding: 1em;
     /* position: absolute; */
     width: 100%;
@@ -36,8 +37,12 @@ main {
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 .flip-container {
     float: left;
-    margin: 10px;
-    width: 35%;
+    margin: 20px;
+    position: static;
+    /* top: 0; */
+    /* left: 0; */
+    width: 400px;
+    /* width: 35%; */
     height: 80%;
     border-radius: 10px;
     transform-style: preserve-3d;
