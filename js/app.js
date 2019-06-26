@@ -22,15 +22,16 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 // document.getElementById('submit-button').addEventListener('click', );
 
 var form = document.getElementById('userLogin');
-
 var addUser = function(event) {
   event.preventDefault();
   console.log(event.target.userName.value);
   var userName = event.target.userName.value;
+  localStorage.setItem('Name', userName);
   return userName;
 };
 
 form.addEventListener('submit', addUser);
+
 
 /**
  * Constructor function for cards
