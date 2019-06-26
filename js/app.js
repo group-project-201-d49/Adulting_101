@@ -149,6 +149,9 @@ function renderCard(aCardTopicIndex) {
 
   var flipContainer = addElement(undefined, 'div', undefined, 'flip-container');
   console.log(flipContainer);
+  flipContainer.onclick = function() {
+    this.classList.toggle('flipped');
+  };
 
   // TODO add ontouchstart and add dynamically changing flipCard number
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
