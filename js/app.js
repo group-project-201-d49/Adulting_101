@@ -22,44 +22,16 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 var userName = 'userInput()';
 
-document.getElementById('submit-button').addEventListener('click', userInput);
-
-function userInput(e) {
-  e.preventDefault();
+document.getElementById('submit-button').addEventListener('click', function(event){
+  event.preventDefault();
+  var x = event.target.entry.value;
+  console.log(x);
   console.log('Im clicking');
-  console.log(e);
+  console.log(event);
   var name = document.getElementById('user-entry');
   //document.setItem('guestName', 'name');
   console.log(name);
-}
-userInput();
-
-
-// var userEntry = user data entered into <input>text user entry</input>
-
-// localStorage.setItem('textEntry', user entered input text (username) )
-
-// localStorage.setItem('textEntry', userEntry);
-
-// var data = localStorage.getItem('textEntry');
-
-// var userName = [];
-// getElementById('user-entry');
-
-// var storeUserName = function(){
-//   this.name = [];
-// }
-
-// storeUserName.prototype.setItem = function (userName, userTextEntry) {
-//   if (typeof userTextEntry !== "string") {
-//     {return;
-//     this.name[username] = userTextEntry;}
-// }
-//   storeUserName.prototype.getItem = function(userName) {
-//     return this.name[userName];
-//   }
-// }
-
+});
 
 /**
  * Constructor function for cards
