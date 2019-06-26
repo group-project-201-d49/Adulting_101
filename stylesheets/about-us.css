@@ -1,56 +1,25 @@
 * {
     box-sizing: border-box;
-    border: solid purple;
+}
+
+h2 {
+    text-align: center;
+    
 }
 
 body {
-    border: solid black 8px;
     margin: auto;
     width: 100%;
 }
 
-header {
-    border: solid red;
-    padding: 10px;
-}
-
 main {
-    border: solid rgb(153, 0, 255) 8px;
     padding: 10px;
     width: 100%;
-    background: gray;
     height: 800px;
 }
 
-h1 {
-    border: solid orange;
-    display: block;
-    text-align: center;
-}
-
-h2 {
-    border: solid pink;
-    display: inline-block;
-}
-
 footer {
-    border: solid green;
     padding: 10px;
-}
-
-nav {
-    float: right;
-}
-
-ul {
-    border: solid blue;
-    text-decoration: none;
-    list-style: none;
-    padding: 5px;
-}
-
-li {
-    display: inline;
 }
 
 
