@@ -20,7 +20,6 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 //push user input to local storage
 
 
-
 var userName = 'userInput()';
 
 document.getElementById('submit-button').addEventListener('click', userInput);
@@ -34,6 +33,33 @@ function userInput(e) {
   console.log(name);
 }
 userInput();
+
+
+// var userEntry = user data entered into <input>text user entry</input>
+
+// localStorage.setItem('textEntry', user entered input text (username) )
+
+// localStorage.setItem('textEntry', userEntry);
+
+// var data = localStorage.getItem('textEntry');
+
+// var userName = [];
+// getElementById('user-entry');
+
+// var storeUserName = function(){
+//   this.name = [];
+// }
+
+// storeUserName.prototype.setItem = function (userName, userTextEntry) {
+//   if (typeof userTextEntry !== "string") {
+//     {return;
+//     this.name[username] = userTextEntry;}
+// }
+//   storeUserName.prototype.getItem = function(userName) {
+//     return this.name[userName];
+//   }
+// }
+
 
 /**
  * Constructor function for cards
@@ -160,7 +186,7 @@ function renderCard(aCardTopicIndex) {
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
 
   var front = addElement(flipCard, 'div', undefined, 'front');
-  addElement(front, 'div', card.topicName);
+  addElement(front, 'h2', card.topicName);
   console.log(front);
   addElement(front, 'i', undefined, 'card-0');
 
@@ -205,7 +231,6 @@ function renderDeck() {
 
 //getUserName();
 createCards();
-renderDeck();
 
 /**
  * This is a helper function to add an element with given tag name optional text and class names to the given parent
