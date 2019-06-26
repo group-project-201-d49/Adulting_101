@@ -23,11 +23,11 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 var userName = 'userInput()';
 
-document.getElementById('submit-button').addEventListener('click', (e));
+document.getElementById('submit-button').addEventListener('click', userInput);
 
 function userInput(e) {
-  console.log('Im clicking');
   e.preventDefault();
+  console.log('Im clicking');
   console.log(e);
   var name = document.getElementById('user-entry');
   //document.setItem('guestName', 'name');
