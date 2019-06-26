@@ -35,7 +35,7 @@ li {
 
 .flip-container {
     display: inline-block;
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 .flip-card1 {
@@ -55,17 +55,24 @@ li {
 /* THE MAINCONTAINER HOLDS EVERYTHING */
 
 .container {
-    height: 355px;
-    /* display: inline-block; */
+    /* position: absolute; */
+    display: inline-block;
+    background: none;
+    height: 350px;
     font-weight: bold;
-    width: 100%;
+    margin: 5% auto;
+    background: rgb(241, 191, 191);
     overflow: hidden;
 }
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 .flip-container {
-    /* padding: 5px; */
-    margin: 0 3%;
+    padding: 5px;
+    margin: 5px;
+    /* position: relative; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 250px;
     height: 350px;
     width: 450px;
     border: black 10px;
@@ -123,7 +130,8 @@ li {
 }
 
 /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
-.front h1, .back h1 {
+.front h1,
+.back h1 {
     font-family: 'zilla slab', sans-serif;
     padding: 30px;
     font-weight: bold;
@@ -131,7 +139,8 @@ li {
     text-align: center;
 }
 
-.front p, .back p {
+.front p,
+.back p {
     font-family: 'zilla slab', sans-serif;
     padding: 30px;
     font-weight: normal;
@@ -144,9 +153,10 @@ input {
     z-index: 500;
 }
 
-:checked + .front {
+:checked+.front {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
+}
 
 footer {
     width: 100%;
