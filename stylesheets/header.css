@@ -19,31 +19,29 @@ header {
   width: 100%;
   background-color: #A657AE;
   color: rgba(255, 255, 255, 0.87);
+  overflow: hidden;
 }
 
 h1 {
+  padding: 10px 0 0 0;
   display: block; 
   text-align: center;
-  font-size: 45px;
+  font-size: 50px;
 }
 
 h2 {
   font-size: 35px;
-
 }
 
 nav {
-  width: 100%;
-  display: block;
-  background-color: rgb(138, 29, 138);
-
+  /* width: 100%; */
+  float: right;
 }
 
 a {
   padding: 0px 10px;
-  float: right;
-  font-size: 15px;
-  display: block;
+  font-size: 22px;
+  display: inline-block;
   list-style: none;
   font-weight: bold;
   text-decoration: none;
@@ -52,9 +50,9 @@ a {
 }
 
 a:link {
-  color: rgb(0, 0, 0); 
+  color: white; 
 }
 
 a:visited {
-  color: rgb(42, 42, 43); 
+  color:white; 
 }
