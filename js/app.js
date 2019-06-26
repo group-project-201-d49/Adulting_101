@@ -149,15 +149,10 @@ function renderCard(aCardTopicIndex) {
 
   var flipContainer = addElement(undefined, 'div', undefined, 'flip-container');
   console.log(flipContainer);
-
-  var frontClick = addElement(undefined, 'input', undefined, 'front-click');
-  frontClick.type = 'checkbox';
   
-  
-  
-  
-  
-  
+  flipContainer.onclick = function() {
+    this.classList.toggle('flipped');
+  }
   
   // TODO add ontouchstart and add dynamically changing flipCard number
   var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
@@ -166,8 +161,7 @@ function renderCard(aCardTopicIndex) {
   addElement(front, 'span', card.topicName);
   console.log(front);
   addElement(front, 'i', undefined, 'card-0');
-  
-  front.appendChild(frontClick);
+
   var back = addElement(flipCard, 'div', undefined, 'back');
   var taskList = addElement(back, 'ul');
 

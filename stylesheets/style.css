@@ -122,15 +122,21 @@ nav {
   border-color: black;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
+  box-shadow: 0 10px 10px rgb(134, 132, 132);
+
 }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-/* .flip-container:hover .flip-card-0 {
+.flip-container.flipped:after {
   transform: rotateY(180deg);
-  background: teal;
-  box-shadow: 0 20px 20px blue;
-} */
+  background: none;
+}
 
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.flip-container:hover {
+  transform: rotateY(180deg);
+  background: none;
+}
 
 
 /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
