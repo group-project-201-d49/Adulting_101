@@ -19,30 +19,48 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
 //push user input to local storage
 
-var userEntry = user data entered into <input>text user entry</input>
+document.getElementById('submit-button').addEventListener('click', textEntry);
 
-localStorage.setItem('textEntry', user entered input text (username) )
-
-localStorage.setItem('textEntry', userEntry);
-
-var data = localStorage.getItem('textEntry');
-
-var userName = [];
-getElementById('user-entry');
-
-var storeUserName = function(){
-  this.name = [];
-}
-
-storeUserName.prototype.setItem = function (userName, userTextEntry) {
-  if (typeof userTextEntry !== "string") {
-    {return;
-    this.name[username] = userTextEntry;}
-}
-  storeUserName.prototype.getItem = function(userName) {
-    return this.name[userName];
+function textEntry(userName) {
+  if (userName === 'string') {
+    
   }
 }
+
+function test()
+{
+  var userInput = document.getElementById('user-entry').value;
+  document.write(userInput);
+  console.log(userInput);
+}
+
+test();
+
+
+// var userEntry = user data entered into <input>text user entry</input>
+
+// localStorage.setItem('textEntry', user entered input text (username) )
+
+// localStorage.setItem('textEntry', userEntry);
+
+// var data = localStorage.getItem('textEntry');
+
+// var userName = [];
+// getElementById('user-entry');
+
+// var storeUserName = function(){
+//   this.name = [];
+// }
+
+// storeUserName.prototype.setItem = function (userName, userTextEntry) {
+//   if (typeof userTextEntry !== "string") {
+//     {return;
+//     this.name[username] = userTextEntry;}
+// }
+//   storeUserName.prototype.getItem = function(userName) {
+//     return this.name[userName];
+//   }
+// }
 
 
 /**
