@@ -1,3 +1,9 @@
+:root {
+  --background-color: grey;
+  --color: black;
+  --box-shadow: rgb(105, 105, 105);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -129,7 +135,7 @@ li {
 }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container.flipped:after {
+.flip-container.flipped {
   transform: rotateY(180deg);
   background: none;
 }
