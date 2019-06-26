@@ -1,18 +1,12 @@
-:root {
+/* :root {
   --background-color: rgb(179, 177, 177);
   --color: rgb(179, 177, 177);
   --box-shadow: rgb(105, 105, 105);
   font-family: 'Varela Round', sans-serif;
-}
+} */
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: auto; 
-  width: 100%; 
-  font-family: sans-serif;
 }
 
 header {
@@ -21,6 +15,13 @@ header {
   color: rgba(255, 255, 255, 0.87);
   overflow: hidden;
 }
+
+/* body {
+  margin: auto; 
+  width: 100%; 
+  font-family: sans-serif;
+} */
+
 
 h1 {
   padding: 10px 0 0 0;
@@ -38,6 +39,10 @@ nav {
   float: right;
 }
 
+nav a {
+  color: white;
+}
+
 a {
   padding: 0px 10px;
   font-size: 22px;
@@ -50,9 +55,9 @@ a {
 }
 
 a:link {
-  color: white; 
+  color: black; 
 }
 
 a:visited {
-  color:white; 
+  color:black; 
 }

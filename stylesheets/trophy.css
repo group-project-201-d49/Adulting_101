@@ -15,16 +15,6 @@ body {
   font-family: 'Varela Round', sans-serif;
 }
 
-ul {
-  padding: 5px;
-  margin: 5px;
-}
-
-li {
-  display: block;
-  text-align: left;
-}
-
 /* THE CONTAINER HOLDS THE CARDS */
 
 .container {
@@ -36,7 +26,7 @@ li {
   margin: auto;
 }
 
-/* THE CARD HOLDS THE FRONT AND BACK FACES */
+/* THE CONTAINER HOLDS EACH OF THE CARDS */
 .card-container {
   margin: 25px;
   height: 400px;
