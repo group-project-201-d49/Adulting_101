@@ -30,9 +30,6 @@ var addUser = function(event) {
   return userName;
 };
 
-form.addEventListener('submit', addUser);
-
-
 /**
  * Constructor function for cards
  *
