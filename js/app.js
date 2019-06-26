@@ -1,6 +1,5 @@
 'use strict';
 
-
 /*
 Alert user to submit their name. Store their name in local storage. Store in name: 'value'.
 
@@ -134,9 +133,6 @@ function createCards() {
   card.addSkill('Skill 3', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 }
 
-
-
-
 /**
  * this renders one card and returns the index for that card
  *
@@ -227,4 +223,3 @@ function addElement(parent, tagName, text, className) {
   }
   return newElement;
 }
-
