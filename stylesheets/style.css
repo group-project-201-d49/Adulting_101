@@ -73,7 +73,6 @@ li {
   border: solid #990000 15px; 
 }
 
-
 .container {
   width: 100%;
   /* background: rgb(241, 191, 191); */
@@ -125,12 +124,22 @@ li {
   border-color: black;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
+  box-shadow: 0 10px 10px rgb(134, 132, 132);
+
 }
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.flip-container:hover{
+.flip-container.flipped:after {
   transform: rotateY(180deg);
+  background: none;
 }
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.flip-container:hover {
+  transform: rotateY(180deg);
+  background: none;
+}
+
 
 /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
 
@@ -184,6 +193,15 @@ li {
   font-size: 12px;
   text-align: center;
 }
+
+input {
+  /* display: none; */
+  z-index: 500;
+}
+
+:checked + .front {
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
 
 footer {
   width: 100%;
