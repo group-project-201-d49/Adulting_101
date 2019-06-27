@@ -1,6 +1,5 @@
 'use strict';
 
-
 /*
 Alert user to submit their name. Store their name in local storage. Store in name: 'value'.
 
@@ -14,52 +13,117 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
+var userName='';
 
 //Global functions
 
-var userName = '';
-
 //User name requested with a form, use css to hide the structure after the introduction and user input is completed
-function setUserName(aUser) {
-  var user = 'Push it';
-  // prompt ('Hey baby! What\'s your name?');
-  //send username to LS
-  userName = aUser;
-  return alert ('Hi ' + userName + ', welcome to Adulting 101! Are you ready to Adult?');
-  //function that gets UserName to call on name globally
-}
+//push user input to local storage
 
-// setUserName();
+// document.getElementById('submit-button').addEventListener('click', );
+
+var form = document.getElementById('userLogin');
+
+var addUser = function(event) {
+  event.preventDefault();
+  console.log(event.target.userName.value);
+  var userName = event.target.userName.value;
+  var strUserName = JSON.stringify(userName);
+  localStorage.setItem('Name', strUserName);
+  console.log(strUserName, 'I have been stringified');
+  userName = JSON.parse(localStorage.getItem('Name'));
+  console.log(userName, 'I have been parsed');
+  var displayName = document.querySelector('#userName');
+  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
+  // return strUserName;
+};
+
+
+//
 
 /**
  * Constructor function for cards
  *
  * @param {*} aTopicName Describes the topic title for the card and its content
  */
-function CardTopic (aTopicName) {
+function CardTopic (aTopicName, aTopicIcon) {
   this.topicName = aTopicName;
+  this.topicIcon = aTopicIcon;
   this.topicSkillList = [];
-  var skillComplete = 0;
-  CardTopic.list.push(this);
+  this.cardTopicIndex = CardTopic.list.push(this) - 1;
 }
 
 //Array of card topics
 CardTopic.list =[];
 
-//Prototype to add skills to each card
+//Prototype to add skills to each card, then storing checked information in the skill object and then getting stored checked info from LS if it exists
 CardTopic.prototype.addSkill = function(aSkillName, aLink) {
   var skill = new Skill(aSkillName, aLink);
-  this.topicSkillList.push(skill);
+  var skillIndex = this.topicSkillList.push(skill) - 1;
+  var key = `${userName}.${this.cardTopicIndex}.${skillIndex}`;
+  var value = localStorage.getItem(key);
+  console.log(value);
+
+  if (value) {
+    skill.completed = (value === 'completed');
+  }
+};
+
+//Function to look at the card topic list and given the index will id which card interested in and will call the updated skill function for that specific card
+
+CardTopic.updateSkill = function(aCardTopicIndex, aSkillIndex, aCompleted) {
+  CardTopic.list[aCardTopicIndex].updateSkill(aSkillIndex, aCompleted);
+};
+
+CardTopic.prototype.updateSkill = function(aSkillIndex, aCompleted) {
+  var skill = this.topicSkillList[aSkillIndex];
+  skill.completed = aCompleted;
+
+  var key = `${userName}.${this.cardTopicIndex}.${aSkillIndex}`;
+  var value = '';
+
+  if (aCompleted) {
+    value = 'completed';
+  }
+  localStorage.setItem(key,value);
+};
+
+//Function to count completion of the skills across topics (total skills completed)
+CardTopic.totalSkillsComplete = function() {
+  var result = 0;
+  for (var i = 0; i < CardTopic.list.length; i++) {
+    result += CardTopic.list[i].cardSkillsComplete();
+  }
+  console.log('total skills complete:', result);
+  return result;
 };
 
 //Prototype to count completion of the skill for each card
 CardTopic.prototype.cardSkillsComplete = function() {
-
+  var result = 0;
+  for (var i = 0; i < this.topicSkillList.length; i++) {
+    if (this.topicSkillList[i].completed) {
+      result ++;
+    }
+  }
+  console.log('card skills complete:', result);
+  return result;
 };
 
-//Prototype to count completion of the skills across topics (total skills completed)
-CardTopic.prototype.totalSkillsComplete = function() {
+CardTopic.count = function () {
+  return CardTopic.list.length;
+};
 
+CardTopic.skillCount = function () {
+  var result = 0;
+  for (var i = 0; i < CardTopic.list.length; i++) {
+    result += CardTopic.list[i].skillCount();
+  }
+  return result;
+};
+
+CardTopic.prototype.skillCount = function () {
+  return this.topicSkillList.length;
 };
 
 /**
@@ -72,6 +136,7 @@ CardTopic.prototype.totalSkillsComplete = function() {
 function Skill(aSkillName, aLink) {
   this.skillName = aSkillName;
   this.link = aLink;
+  this.completed = false;
 }
 
 /**
@@ -79,44 +144,37 @@ function Skill(aSkillName, aLink) {
  *
  */
 function createCards() {
-  var card = new CardTopic('Finance');
-  card.addSkill('Budgeting', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
-  card.addSkill('Retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
-  card.addSkill('Taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+  var card = new CardTopic('Finance', 'fa fa-hand-holding-usd fa-5x');
+  card.addSkill('How to make and follow a budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
+  card.addSkill('How to plan for retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
+  card.addSkill('How to do your taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+
+  card = new CardTopic('Social', 'fa fa-hands-helping fa-5x');
+  card.addSkill('How to be a better listener', 'https://youtu.be/GOr8xuRcd6Y');
+  card.addSkill('Online etiquette', 'https://transparency.kununu.com/worklife-real-talk-millennial-guide-email-etiquette/');
+  card.addSkill('Phone Calls', 'https://www.huffpost.com/entry/corporate-telephone-etiquette-a-wake-up-call-for-millennials_b_5a2febdee4b0cf10effbb086/');
+
+  card = new CardTopic('Cooking', 'fa fa-utensils fa-5x');
+  card.addSkill('How to boil water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
+  card.addSkill('How to cook eggs', 'https://www.youtube.com/watch?v=qWAagS_MANg');
+  card.addSkill('How to chop an onion', 'https://www.youtube.com/watch?v=0LJb66aYtG8');
 }
 
-/**
- * this renders one card
- *
- */
-function renderCards() {
-  //locate container div document.getElementById CardDeck
-  //use helper funct. add element to build out HTML with
+//TO PUT IN TROPHY.JS_______________________________________________
+
+function renderDeck() {
   var container = document.getElementById('CardDeck');
-  var flipContainer = addElement(container, 'div', undefined, 'flip-container');
-  // TODO add ontouchstart and add dynamically changing flipCard number
-  var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
-  
-  var front = addElement(flipCard, 'div', undefined, 'front');
-  addElement(front, 'span', CardTopic.list[0].topicName);
-  addElement(front, 'i', undefined, 'card-0');
-  
-  var back = addElement(flipCard, 'div', undefined, 'back');
-  var taskList = addElement(back, 'ul');
+  console.log(container);
 
-  for (var i = 0; i < CardTopic.list[0].topicSkillList.length; i++) {
-    var li = addElement(taskList, 'li');
-    
-    var checkBox = addElement(li, 'input', CardTopic.list[0].topicSkillList[i].skillName);
-
-    checkBox.type = 'checkbox';
-
-    checkBox.href = CardTopic.list[0].topicSkillList[i].link;
+  for (var i = 0; i < CardTopic.list.length; i++) {
+    container.appendChild(renderCard(i));
   }
 }
+//TO PUT IN TROPHY.JS_______________________________________________
 
+
+//getUserName();
 createCards();
-renderCards();
 
 /**
  * This is a helper function to add an element with given tag name optional text and class names to the given parent
@@ -135,7 +193,10 @@ function addElement(parent, tagName, text, className) {
   if (className) {
     newElement.className = className;
   }
-  parent.appendChild(newElement);
+  if (parent) {
+    parent.appendChild(newElement);
+  }
   return newElement;
- }
+}
+
 
