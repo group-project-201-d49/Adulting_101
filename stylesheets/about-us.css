@@ -1,82 +1,131 @@
-* {
-  box-sizing: border-box;
+/* FLIP CARD CSS FOR ABOUT US */
+
+/* THE MAIN CONTAINER HOLDS EVERYTHING */
+
+.container {
+    /* position: absolute; */
+    display: inline-block;
+    background: none;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    margin: auto;
 }
 
-body {
-  border: solid black;
-  margin: auto; 
-  width: 960px; 
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+
+.flip-container {
+    margin: 25px;
+    height: 450px;
+    top: 0;
+    left: 0;
+    width: 21%;
+    border-radius: 10px;
+    border-color: black;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    box-shadow: 0px 7px 15px 1px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    object-fit: contain;
 }
 
-header {
-  border: solid red;
-  padding: 10px;
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.flip-container:hover {
+    transform: rotateY(180deg);
 }
 
-main {
-  border: solid yellow;
-  padding: 10px; 
-  width: 100%;
-  background: gray;
-  padding: 10px;
-  height: 300px;
-  position: relative;
-  float: left;
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    opacity: .75;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    background: #FFFAFA;
 }
 
-h1 {
-  border: solid orange;
-  display: block; 
-  text-align: center;
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.front h2,
+.back h2 {
+    padding: 30px 0 0 0;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+.front p,
+.back p {
+    padding: 0 30px;
+    font-weight: normal;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+/* TODO: MAKE SHOW CLICK FUNCTION INSTEAD OF MOUSEOVER */
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #FFFAFA;
+    opacity: .60;
+    color: #000;
+    font-size: 30px;
+    text-align: center;
+    /* color: #333; */
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+div.gina>.front {
+    float: left;
+    background-image: url(../assets/gina_about_me.png);
+    background-size: cover;
+    background-position: center;
+}
+
+div.jon>.front {
+    float: right;
+    background-image: url(../assets/jon_about_me.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+div.lyndsey>.front {
+    float: left;
+    background-image: url(../assets/lyndsey_about_me_image.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+div.sarah>.front {
+    float: right;
+    background-image: url(../assets/sarah_about_me.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 h2 {
-  border: solid pink;
-  display: inline-block;
+    margin-top: 30px;
+    font-size: 36px;
 }
 
-footer {
-  border: solid green; 
-  padding: 10px; 
+.aboutUsFooter {
+    margin-top: 50px;
 }
 
-nav {
-  float: right;
-}
-
-ul {
-  border: solid blue;
-  text-decoration: none;
-  list-style: none;
-  padding: 5px;
-}
-
-li {
-  display: inline;
-}
-
-div {
-  border: solid purple;
-}
-
-div {
-  border: solid purple;
-  width: 45%;
-}
-
-.gina {
-  float: left;
-}
-
-.jon {
-  float: right;
-}
-
-.lyndsey {
-  float: left;
-}
-
-.sarah {
-  float: right;
-}
-
+.

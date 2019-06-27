@@ -2,83 +2,42 @@
 <html>
 
 <head>
-   <title>Push It Real Good (Final Project)</title>
-   <link rel="stylesheet" href="./stylesheets/reset.css"/>
-   <link rel="stylesheet" href="./stylesheets/style.css"/>
+  
+  <title>Push It Real Good (Final Project)</title>
+  <link rel='icon' href='./assets/favicon.ico' type='image/x-icon'/>
+  <link rel="stylesheet" href="./stylesheets/reset.css"/>
+  <link rel="stylesheet" href="./stylesheets/welcome.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-
-  <header>
-    <h1>Adulting 101</h1>
-    <nav>
-      <ul>
-          <a href="./index.html"><li>Home</li></a>
-          <a href="./trophy.html"><li>Trophies</li></a>
-          <a href="./about-us.html"><li>About Us</li></a>
-      </ul>
-    </nav>
-  </header>
-
+  
   <main>
-    <div class="container" id="CardDeck">
-
-      <!-- this is the replicated code block for our card formatting -->
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-        <div class="flip-card-0">
-          <div class="front">
-            <span></span>
-            <i class="card-0"></i>
-          </div>
-          <div class="back">
-            <ul id="taskList">
-              <li><input type="checkbox"></li>
-              <li><input type="checkbox"></li>
-              <li><input type="checkbox"></input></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- this is the replicated code block for our card formatting -->
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-        <div class="flip-card-1">
-          <div class="front">
-            <span>Social Skills</span>
-            <i class="card-1"></i>
-          </div>
-          <div class="back">
-            checklist
-          </div>
-        </div>
-      </div>
-
-      <!-- this is the replicated code block for our card formatting -->
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-        <div class="flip-card-2">
-          <div class="front">
-            <span>Cooking</span>
-            <i class="card-2"></i>
-          </div>
-          <div class="back">
-            checklist
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <span class="status">Status Bar</span>
     
+    <div>
+      <h1>
+      Welcome to your adventure in Adulting! If you are ready to Adult please introduce yourself below!
+      </h1>
+      
+      <form id="userLogin">
+        <input id="userName" type="text" placeholder="Name"/>
+      </form>
+
+      <h2>Disclaimer: Warning, Adulting isn't for everyone. Are you ready to get up on this?</h2>
+    </div>
+      
   </main>
- 
-  <footer>
-    &copy; 2019 .PushIt(RealGood)
+
+  <footer class="indexFooter">
+
+
+    <p> &copy; 2019 .PushIt(RealGood)</p>
+
   </footer>
 
-  <script src="./js/app.js"></script>
-  <script src="./js/home.js"></script>
-
+  <script src="./js/index.js"></script>
+  
 </body>
 
 </html>
