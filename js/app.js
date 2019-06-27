@@ -71,11 +71,11 @@ CardTopic.prototype.addSkill = function(aSkillName, aLink) {
 
 //Function to look at the card topic list and given the index will id which card interested in and will call the updated skill function for that specific card
 
-CardTopic.updateSkill = function(aCardTopicIndex,aSkillIndex,aCompleted) {
-  CardTopic.list[aCardTopicIndex].updateSkill(aSkillIndex,aCompleted);
+CardTopic.updateSkill = function(aCardTopicIndex, aSkillIndex, aCompleted) {
+  CardTopic.list[aCardTopicIndex].updateSkill(aSkillIndex, aCompleted);
 };
 
-CardTopic.prototype.updateSkill = function(aSkillIndex,aCompleted) {
+CardTopic.prototype.updateSkill = function(aSkillIndex, aCompleted) {
   var skill = this.topicSkillList[aSkillIndex];
   skill.completed = aCompleted;
 
@@ -108,6 +108,22 @@ CardTopic.prototype.cardSkillsComplete = function() {
   }
   console.log('card skills complete:', result);
   return result;
+};
+
+CardTopic.count = function () {
+  return CardTopic.list.length;
+};
+
+CardTopic.skillCount = function () {
+  var result = 0;
+  for (var i = 0; i < CardTopic.list.length; i++) {
+    result += CardTopic.list[i].skillCount();
+  }
+  return result;
+};
+
+CardTopic.prototype.skillCount = function () {
+  return this.topicSkillList.length;
 };
 
 /**
@@ -145,13 +161,6 @@ function createCards() {
 }
 
 //TO PUT IN TROPHY.JS_______________________________________________
-function handleSkillChange(event) {
-  var id = event.target.id;
-  var fullSkillId = id.split('.');
-  CardTopic.updateSkill(fullSkillId[0],fullSkillId[1],event.target.checked);
-  console.log(fullSkillId,event.target.checked);
-  createStatusBarData();
-}
 
 function renderDeck() {
   var container = document.getElementById('CardDeck');
@@ -190,29 +199,4 @@ function addElement(parent, tagName, text, className) {
   return newElement;
 }
 
-//function to divide the total skills completed by the total amount of topics to complete in order to generate the data for our status bar
-function createStatusBarData () {
-  var percentResult = (CardTopic.totalSkillsComplete() / CardTopic.list.length);
-  console.log(percentResult);
-  return Math.round(percentResult*100);
-}
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: 'horizontalBar',
-
-  // The data for our dataset
-  data: {
-    labels: [],
-    datasets: [{
-      label: 'Your Adult Status',
-      backgroundColor: 'rgb(0,179,179)',
-      data: [createStatusBarData()]
-    }]
-  },
-
-  // Configuration options go here
-  options: {}
-});
 

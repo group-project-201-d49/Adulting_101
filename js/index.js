@@ -57,6 +57,15 @@ function handleSkillChange(event) {
   console.log(fullSkillId, event.target.checked);
 }
 
+function handleSkillChange(event) {
+  var id = event.target.id;
+  var fullSkillId = id.split('.');
+  CardTopic.updateSkill(fullSkillId[0], fullSkillId[1], event.target.checked);
+  console.log(fullSkillId, event.target.checked);
+  createStatusBarData();
+}
+
+
 function renderDeck() {
   var container = document.getElementById('CardDeck');
   console.log(container);

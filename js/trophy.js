@@ -64,7 +64,7 @@ function renderTrophyDeck() {
   var container = document.getElementById('CardDeck');
   console.log(container);
 
-  for (var i = 0; i < CardTopic.list.length; i++) {
+  for (var i = 0; i < CardTopic.count(); i++) {
     container.appendChild(renderCard(i));
   }
 }
@@ -72,13 +72,68 @@ function renderTrophyDeck() {
 function populateUserNameSpans() {
   var elements = document.getElementsByClassName('userName');
   console.log('populate names...');
-  console.log(elements);
+  console.log(elements.length);
   for (var i = 0; i < elements.length; i++) {
     elements[i].textContent = userName;
     console.log(elements[i]);
   }
 }
 
+/**
+ * Function to divide the total skills completed by
+ * the total amount of topics to complete in order to generate the data
+ * for our status bar
+ *
+ * @returns percent complete across all topics
+ */
+function createStatusBarData() {
+  var result = (CardTopic.totalSkillsComplete() / CardTopic.skillCount());
+  result = Math.round(result * 100);
+  return result;
+}
+
+function renderStatusChart() {
+  var ctx = document.getElementById('myChart').getContext('2d');
+  Chart.defaults.global.legend.display = false;
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+
+    // The data for our dataset
+    data: {
+      labels: [],
+      datasets: [{
+        label: '',
+        backgroundColor: 'rgb(0,179,179)',
+        data: [createStatusBarData()]
+      }]
+    },
+
+    // Configuration options go here
+    options: {
+      tooltips: { enabled: false },
+      hover: {mode: null},
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontSize: 20,
+            fontStyle: 'bold',
+            fontFamily: '\'Varela Round\', sans-serif',
+            fontColor: '#111',
+            min: 0,
+            max: 100, // Your absolute max value
+            callback: function (value) {
+              return ((value / 100) * 100).toFixed(0) + '%'; // convert it to percentage
+            },
+          },
+        }, ],
+      },
+    }
+  });
+}
+
 //Global variables
 populateUserNameSpans();
 renderTrophyDeck();
+renderStatusChart();
+
