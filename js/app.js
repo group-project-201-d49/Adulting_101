@@ -13,7 +13,7 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
-var userName='';
+var userName='John';
 
 //Global functions
 
