@@ -6,28 +6,27 @@
   <title>Push It Real Good (Final Project)</title>
   <link rel='icon' href='./assets/favicon.ico' type='image/x-icon'/>
   <link rel="stylesheet" href="./stylesheets/reset.css"/>
-  <link rel="stylesheet" href="./stylesheets/header.css"/>
-  <link rel="stylesheet" href="./stylesheets/style.css"/>
-  <link rel="stylesheet" href="./stylesheets/index.css"/>
+  <link rel="stylesheet" href="./stylesheets/welcome.css"/>
   <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"></head>
+
+</head>
 
 <body>
-
-  <header>
-    <h1 id ="userName">Adulting 101 Adventure</h1>
-    <nav>
-      <ul>
-        <a class = "pages" href="./index.html">Home</a>
-        <a class = "pages" href="./trophy.html">Trophies</a>
-        <a class = "pages" href="./about-us.html">About Us</a>
-      </ul>
-    </nav>
-    
-  </header>
-
+  
   <main>
-    <div class="container" id="CardDeck"></div>
+    
+    <div>
+      <h1>
+      Welcome to your adventure in Adulting! If you are ready to Adult please introduce yourself below!
+      </h1>
+      
+      <form id="userLogin">
+        <input id="userName" type="text" placeholder="Name" />
+      </form>
+
+      <h2>Disclaimer: Warning, Adulting isn't for everyone. Are you ready to get up on this?</h2>
+    </div>
+      
   </main>
   
   <footer>
@@ -36,9 +35,8 @@
 
   </footer>
 
-  <script src="./js/app.js"></script>
-  <script src="./js/home.js"></script>
-
+  <script src="./js/welcome.js"></script>
+  
 </body>
 
 </html>

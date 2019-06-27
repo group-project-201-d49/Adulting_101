@@ -3,13 +3,8 @@
 //Global variables
 var userName='';
 var currentUser = '';
-//Global functions
 
-//User name requested with a form, use css to hide the structure after the introduction and user input is completed
-//push user input to local storage
-
-// document.getElementById('submit-button').addEventListener('click', );
-
+//User login and interaction with local storage
 var form = document.getElementById('userLogin');
 
 var addUser = function(event) {
@@ -24,7 +19,7 @@ var addUser = function(event) {
     localStorage.setItem('Current', currentUser);
     localStorage.setItem(`'${userName}'`, userName);
   }
-  window.location.href='./index.html';
+  window.location.href='./home.html';
 };
 
 form.addEventListener('submit', addUser);
