@@ -21,27 +21,27 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 // document.getElementById('submit-button').addEventListener('click', );
 
-var form = document.getElementById('userLogin');
-var addUser = function(event) {
-  event.preventDefault();
-  console.log(event.target.userName.value);
-  var userName = event.target.userName.value;
-  localStorage.setItem('Name', userName);
-  return userName;
-};
+// var form = document.getElementById('userLogin');
+// var addUser = function(event) {
+//   event.preventDefault();
+//   console.log(event.target.userName.value);
+//   var userName = event.target.userName.value;
+//   localStorage.setItem('Name', userName);
+//   return userName;
+// };
 
-form.addEventListener('submit', addUser);
-
+// form.addEventListener('submit', addUser);
+var userName = 'PushIt!';
 
 /**
  * Constructor function for cards
  *
  * @param {*} aTopicName Describes the topic title for the card and its content
  */
-function CardTopic (aTopicName) {
+function CardTopic (aTopicName, aTopicIcon) {
   this.topicName = aTopicName;
+  this.topicIcon = aTopicIcon;
   this.topicSkillList = [];
-  var skillComplete = 0;
   this.cardTopicIndex = CardTopic.list.push(this) - 1;
 }
 
@@ -120,86 +120,25 @@ function Skill(aSkillName, aLink) {
  *
  */
 function createCards() {
-  var card = new CardTopic('Finance');
+  // var card = new CardTopic('Finance', 'fa fa-hand-holding-usd fa-5x');
+  var card = new CardTopic('Finance', 'fa fa-trophy fa-5x');
   card.addSkill('How to make and follow a budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
   card.addSkill('How to plan for retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
   card.addSkill('How to do your taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
-  card = new CardTopic('Social');
+  card = new CardTopic('Social', 'fa fa-trophy fa-5x');
+  // card = new CardTopic('Social', 'fa fa-hands-helping fa-5x');
   card.addSkill('How to be a better listener', 'https://youtu.be/GOr8xuRcd6Y');
   card.addSkill('Online etiquette', 'https://transparency.kununu.com/worklife-real-talk-millennial-guide-email-etiquette/');
   card.addSkill('Phone Calls', 'https://www.huffpost.com/entry/corporate-telephone-etiquette-a-wake-up-call-for-millennials_b_5a2febdee4b0cf10effbb086/');
 
-  card = new CardTopic('Cooking');
+  // card = new CardTopic('Cooking', 'fa fa-utensils fa-5x');
+  card = new CardTopic('Cooking', 'fa fa-trophy fa-5x');
   card.addSkill('How to boil water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
   card.addSkill('How to cook eggs', 'https://www.youtube.com/watch?v=qWAagS_MANg');
   card.addSkill('How to chop an onion', 'https://www.youtube.com/watch?v=0LJb66aYtG8');
 }
 
-/**
- * this renders one card and returns the index for that card
- *
- */
-function renderCard(aCardTopicIndex) {
-  //locate container div document.getElementById CardDeck
-  //use helper funct. add element to build out HTML with
-
-  var card = CardTopic.list[aCardTopicIndex];
-
-  var flipContainer = addElement(undefined, 'div', undefined, 'flip-container');
-  console.log(flipContainer);
-
-  flipContainer.onclick = function() {
-    console.log('I was clicked');
-    this.classList.toggle('flipped');
-  };
-
-  // TODO add ontouchstart and add dynamically changing flipCard number
-  var flipCard = addElement(flipContainer, 'div', undefined, 'flip-card-0');
-
-  var front = addElement(flipCard, 'div', undefined, 'front');
-  addElement(front, 'h2', card.topicName);
-  console.log(front);
-  addElement(front, 'i', undefined, 'card-0');
-
-  var back = addElement(flipCard, 'div', undefined, 'back');
-  var taskList = addElement(back, 'ul');
-
-  // For loop creating each of the rows on the back side of the card from the skill list (card.topicSkillList)
-
-  for (var i = 0; i < card.topicSkillList.length; i++) {
-
-    var skill = card.topicSkillList[i];
-    var li = addElement(taskList, 'li');
-
-    var checkBox = addElement(li, 'input');
-    checkBox.type = 'checkbox';
-    checkBox.id = `${card.cardTopicIndex}.${i}`;
-    checkBox.checked = skill.completed;
-    checkBox.addEventListener('change', handleSkillChange);
-
-    var a = addElement(li,'a', skill.skillName);
-    a.href = skill.link;
-    a.target = '_blank';
-  }
-  return flipContainer;
-}
-
-function handleSkillChange(event) {
-  var id = event.target.id;
-  var fullSkillId = id.split('.');
-  CardTopic.updateSkill(fullSkillId[0],fullSkillId[1],event.target.checked);
-  console.log(fullSkillId,event.target.checked);
-}
-
-function renderDeck() {
-  var container = document.getElementById('CardDeck');
-  console.log(container);
-
-  for (var i = 0; i < CardTopic.list.length; i++) {
-    container.appendChild(renderCard(i));
-  }
-}
 
 //getUserName();
 createCards();
