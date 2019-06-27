@@ -22,30 +22,28 @@ footer {
     margin: 0 auto;
     text-align: center;
     padding: 5px;
-  }
-  
+}
+
 
 h2 {
     text-align: center;
     font-size: 26px;
-    color: #000;
 }
 
 
 h3 {
     text-align: left;
     font-size: 23px;
-    color: #000;
 }
 
 .container a:link {
-    color: black; 
+    color: black;
 }
-  
+
 .container a:visited {
-    color: black; 
+    color: black;
 }
-  
+
 .container a:hover {
     /* color:#A657AE; */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
