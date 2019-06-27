@@ -1,0 +1,35 @@
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: #A657AE;
+  box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+  color: whitesmoke;
+  word-wrap: normal;
+  width: 960px;
+  margin: auto;
+  text-align: center;
+}
+
+main {
+  height: 90vh;
+  margin: 40% 0 40% 0;
+}
+
+form {
+  margin: 20px;
+}
+
+input {
+  text-align: center;
+}
+
+#submit {
+  display: none;
+}
+
+footer {
+  height: 10vh;
+}
