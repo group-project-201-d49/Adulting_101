@@ -11,11 +11,12 @@ body {
   width: 960px;
   margin: auto;
   text-align: center;
+  font-size: 28px;
 }
 
 main {
   height: 90vh;
-  margin: 30% 0 30% 0;
+  margin: 15% 0 0 0;
 }
 
 form {
@@ -24,6 +25,11 @@ form {
 
 input {
   text-align: center;
+  border-radius: 8px;
+  height: 50px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #submit {
