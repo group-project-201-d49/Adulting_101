@@ -23,5 +23,3 @@ var addUser = function(event) {
 };
 
 form.addEventListener('submit', addUser);
-
-
