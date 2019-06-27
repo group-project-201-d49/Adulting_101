@@ -112,8 +112,6 @@
   background: #FFFAFA;
 }
 
-
-
 /* FLIP CARD CSS */
 
 .flip-card1 {
@@ -134,16 +132,3 @@ input {
   z-index: 500;
 }
 
-#statusBar {
-
-  margin: 30px;
-  padding: 5px;
-  width: 75%;
-  background-color: lightgray;
-}
-
-#myBar {
-  width: 40%;
-  height: 30px;
-  background-color: teal;
-}
