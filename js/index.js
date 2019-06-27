@@ -19,14 +19,9 @@ var addUser = function(event) {
     localStorage.setItem('Current', currentUser);
     localStorage.setItem(`'${userName}'`, userName);
   }
-  window.location.href='./home.html';
+  window.location.href='../home.html';
 };
 
-var handleClick = function(event) {
-  event.preventDefault();
-  var displayName = document.home.querySelector('userNameTitle');
-  displayName.textContent = userName +'\'s Adulting 101 Adventure';
-};
+form.addEventListener('submit', addUser);
 
-form.addEventListener('Submit', addUser);
-form.addEventListener('Submit', handleClick);
+

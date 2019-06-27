@@ -1,5 +1,14 @@
 'use strict';
 
+//Global variables
+var userName='';
+var currentUser = localStorage.Current;
+console.log(localStorage.Current);
+
+//User login and interaction with local storage
+var displayName = document.getElementById('userNameTitle');
+displayName.textContent = `${currentUser}'s Adulting 101 Adventure`;
+
 /**
  * this renders one card and returns the index for that card
  *
