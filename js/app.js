@@ -70,7 +70,7 @@ CardTopic.updateSkill = function(aCardTopicIndex, aSkillIndex, aCompleted) {
   CardTopic.list[aCardTopicIndex].updateSkill(aSkillIndex, aCompleted);
 };
 
-CardTopic.prototype.updateSkill = function(aSkillIndex, aCompleted) {
+CardTopic.updateSkill = function(aSkillIndex, aCompleted) {
   var skill = this.topicSkillList[aSkillIndex];
   skill.completed = aCompleted;
 

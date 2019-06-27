@@ -19,7 +19,7 @@ var addUser = function(event) {
     localStorage.setItem('Current', currentUser);
     localStorage.setItem(`'${userName}'`, userName);
   }
-  window.location.href='../home.html';
+  window.location.href='./home.html';
 };
 
 form.addEventListener('submit', addUser);

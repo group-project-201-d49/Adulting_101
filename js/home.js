@@ -37,14 +37,19 @@ function renderCard(aCardTopicIndex) {
   addElement(front, 'i', undefined, 'card-0');
 
   var back = addElement(flipCard, 'div', undefined, 'back');
-  var taskList = addElement(back, 'ul');
+  var waterMark = addElement(back, 'i', undefined, card.topicIcon).style = 'color:lightgray; font-size: 300px';
+
+  addElement(back, 'h3', card.topicName);
 
   // For loop creating each of the rows on the back side of the card from the skill list (card.topicSkillList)
 
+  var taskList = addElement(back, 'ul');
   for (var i = 0; i < card.topicSkillList.length; i++) {
 
     var skill = card.topicSkillList[i];
     var li = addElement(taskList, 'li');
+    // TODO Font size for checkbox list
+    // var label = addElement(li, 'label');
 
     var checkBox = addElement(li, 'input');
     checkBox.type = 'checkbox';
