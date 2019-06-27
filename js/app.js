@@ -13,33 +13,28 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
-var userName='';
+var userName= localStorage.Current;
+var userObject = `'${userName}'`;
+
+if (typeof localStorage.getItem(userObject) === 'string') {
+
+  console.log('inside the if');
+  var newUserObject = new User(userName);
+  var objectString = JSON.stringify(newUserObject);
+  localStorage.setItem(userObject, objectString);
+
+} else {
+
+  var existingUser = JSON.parse(localStorage.getItem(`'${userObject}'`));
+  console.log(existingUser, 'I came back again!');
+}
 
 //Global functions
 
-//User name requested with a form, use css to hide the structure after the introduction and user input is completed
-//push user input to local storage
-
-// document.getElementById('submit-button').addEventListener('click', );
-
-var form = document.getElementById('userLogin');
-
-var addUser = function(event) {
-  event.preventDefault();
-  console.log(event.target.userName.value);
-  var userName = event.target.userName.value;
-  var strUserName = JSON.stringify(userName);
-  localStorage.setItem('Name', strUserName);
-  console.log(strUserName, 'I have been stringified');
-  userName = JSON.parse(localStorage.getItem('Name'));
-  console.log(userName, 'I have been parsed');
-  var displayName = document.querySelector('#userName');
-  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
-  // return strUserName;
-};
-
-
-//
+function User(name) {
+  this.name = name;
+  // this.cards = createCards();
+}
 
 /**
  * Constructor function for cards
