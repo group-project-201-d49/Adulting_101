@@ -13,12 +13,16 @@ var addUser = function(event) {
   if (localStorage.userEntry) {
     userName = localStorage.userEntry;
     currentUser = userName;
+    var displayName = document.querySelector('#userName');
+  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
   } else {
     userName = event.target.userName.value;
     currentUser = userName;
     localStorage.setItem('Current', currentUser);
     localStorage.setItem(`'${userName}'`, userName);
   }
+  var displayName = document.querySelector('#userNameTitle');
+  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
   window.location.href='./home.html';
 };
 
