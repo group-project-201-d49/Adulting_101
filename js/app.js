@@ -223,3 +223,11 @@ function addElement(parent, tagName, text, className) {
   }
   return newElement;
 }
+
+//function to divide the total skills completed by the total amount of topics to complete in order to generate the data for our status bar
+function createStatusBarData () {
+  var totalTopics = 9;
+  var percentResult =(CardTopic.totalSkillsComplete / totalTopics);
+  return Math.round(percentResult);
+}
+createStatusBarData();
