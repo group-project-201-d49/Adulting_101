@@ -86,14 +86,3 @@ p {
     font-size: 120px;
     margin-right: 40px;
 }
-
-footer {
-    display: inline-block;
-    width: 100%;
-}
-
-footer>p {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-}

@@ -10,7 +10,7 @@
     width: 100%;
     font-weight: bold;
     margin: auto;
-  }
+}
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
 
@@ -27,7 +27,7 @@
     box-shadow: 0px 7px 15px 1px rgba(0, 0, 0, 0.5);
     display: inline-block;
     object-fit: contain;
-  }
+}
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
 .flip-container:hover {
@@ -51,23 +51,23 @@
     font-weight: bold;
     font-size: 26px;
     background: #FFFAFA;
-  }
+}
 
 /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 .front h2,
 .back h2 {
-  padding: 30px 0 0 0;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
+    padding: 30px 0 0 0;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
 }
 
 .front p,
 .back p {
-  padding: 0 30px;
-  font-weight: normal;
-  font-size: 24px;
-  text-align: center;
+    padding: 0 30px;
+    font-weight: normal;
+    font-size: 28px;
+    text-align: center;
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
@@ -118,3 +118,14 @@ div.sarah>.front {
     background-size: cover;
     background-position: center;
 }
+
+h2 {
+    margin-top: 30px;
+    font-size: 36px;
+}
+
+.aboutUsFooter {
+    margin-top: 50px;
+}
+
+.
