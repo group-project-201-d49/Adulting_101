@@ -83,5 +83,3 @@ function renderDeck() {
 
 //Global variables
 renderDeck();
-
-form.addEventListener('submit', addUser);
