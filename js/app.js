@@ -38,6 +38,7 @@ var addUser = function(event) {
   // return strUserName;
 };
 
+
 form.addEventListener('submit', addUser);
 
 /**
@@ -128,19 +129,19 @@ function Skill(aSkillName, aLink) {
  */
 function createCards() {
   var card = new CardTopic('Finance');
-  card.addSkill('How to make and follow a budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
-  card.addSkill('How to plan for retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
-  card.addSkill('How to do your taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
+  card.addSkill('Make and follow a budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
+  card.addSkill('Plan for retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
+  card.addSkill('Do your taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
   card = new CardTopic('Social');
-  card.addSkill('How to be a better listener', 'https://youtu.be/GOr8xuRcd6Y');
+  card.addSkill('Be a better listener', 'https://youtu.be/GOr8xuRcd6Y');
   card.addSkill('Online etiquette', 'https://transparency.kununu.com/worklife-real-talk-millennial-guide-email-etiquette/');
   card.addSkill('Phone Calls', 'https://www.huffpost.com/entry/corporate-telephone-etiquette-a-wake-up-call-for-millennials_b_5a2febdee4b0cf10effbb086/');
 
   card = new CardTopic('Cooking');
-  card.addSkill('How to boil water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
-  card.addSkill('How to cook eggs', 'https://www.youtube.com/watch?v=qWAagS_MANg');
-  card.addSkill('How to chop an onion', 'https://www.youtube.com/watch?v=0LJb66aYtG8');
+  card.addSkill('Boil water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
+  card.addSkill('Cook eggs', 'https://www.youtube.com/watch?v=qWAagS_MANg');
+  card.addSkill('Chop an onion', 'https://www.youtube.com/watch?v=0LJb66aYtG8');
 }
 
 /**
