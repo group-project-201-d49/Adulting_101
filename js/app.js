@@ -39,7 +39,7 @@ var addUser = function(event) {
 };
 
 
-form.addEventListener('submit', addUser);
+//
 
 /**
  * Constructor function for cards
@@ -128,20 +128,17 @@ function Skill(aSkillName, aLink) {
  *
  */
 function createCards() {
-  // var card = new CardTopic('Finance', 'fa fa-hand-holding-usd fa-5x');
-  var card = new CardTopic('Finance', 'fa fa-trophy fa-5x');
+  var card = new CardTopic('Finance', 'fa fa-hand-holding-usd fa-5x');
   card.addSkill('How to make and follow a budget', 'https://www.youtube.com/watch?v=AezoY23Qxq0');
   card.addSkill('How to plan for retirement', 'https://www.cnbc.com/2019/05/06/to-retire-with-1-million-gen-z-and-millennials-should-do-this.html');
   card.addSkill('How to do your taxes', 'https://blog.taxact.com/tax-planning-for-working-millennials/');
 
-  card = new CardTopic('Social', 'fa fa-trophy fa-5x');
-  // card = new CardTopic('Social', 'fa fa-hands-helping fa-5x');
+  card = new CardTopic('Social', 'fa fa-hands-helping fa-5x');
   card.addSkill('How to be a better listener', 'https://youtu.be/GOr8xuRcd6Y');
   card.addSkill('Online etiquette', 'https://transparency.kununu.com/worklife-real-talk-millennial-guide-email-etiquette/');
   card.addSkill('Phone Calls', 'https://www.huffpost.com/entry/corporate-telephone-etiquette-a-wake-up-call-for-millennials_b_5a2febdee4b0cf10effbb086/');
 
-  // card = new CardTopic('Cooking', 'fa fa-utensils fa-5x');
-  card = new CardTopic('Cooking', 'fa fa-trophy fa-5x');
+  card = new CardTopic('Cooking', 'fa fa-utensils fa-5x');
   card.addSkill('How to boil water', 'https://www.youtube.com/watch?v=kieGBkOdyMU');
   card.addSkill('How to cook eggs', 'https://www.youtube.com/watch?v=qWAagS_MANg');
   card.addSkill('How to chop an onion', 'https://www.youtube.com/watch?v=0LJb66aYtG8');

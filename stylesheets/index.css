@@ -133,3 +133,8 @@ input {
     /* display: none; */
     z-index: 500;
 }
+
+.whatStatus {
+    text-align: center;
+    /* TODO font-size: 60px; */
+}

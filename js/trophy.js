@@ -15,6 +15,8 @@ function renderCard(aCardTopicIndex) {
   console.log(cardContainer);
 
   var front = addElement(cardContainer, 'div', undefined, 'front');
+  // TODO Add card.topicIcon to background as watermark.
+
   addElement(front, 'h2', card.topicName);
   console.log(front);
 
@@ -54,11 +56,6 @@ function renderCard(aCardTopicIndex) {
   addElement(front, 'h2', msg1);
   addElement(front, 'p', msg2);
 
-
-
-
-
-
   addElement(front, 'i', undefined, 'card-0');
   return cardContainer;
 }
@@ -72,6 +69,16 @@ function renderTrophyDeck() {
   }
 }
 
+function populateUserNameSpans() {
+  var elements = document.getElementsByClassName('userName');
+  console.log('populate names...');
+  console.log(elements);
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].textContent = userName;
+    console.log(elements[i]);
+  }
+}
 
 //Global variables
+populateUserNameSpans();
 renderTrophyDeck();
