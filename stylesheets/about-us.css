@@ -91,18 +91,30 @@
     transform: rotateY(180deg);
 }
 
-.gina {
+div.gina>.front {
     float: left;
+    background-image: url(../assets/gina_about_me.png);
+    background-size: cover;
+    background-position: center;
 }
 
-.jon {
+div.jon>.front {
     float: right;
+    background-image: url(../assets/jon_about_me.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.lyndsey {
+div.lyndsey>.front {
     float: left;
+    background-image: url(../assets/lyndsey_about_me_image.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.sarah {
+div.sarah>.front {
     float: right;
+    background-image: url(../assets/sarah_about_me.jpg);
+    background-size: cover;
+    background-position: center;
 }
