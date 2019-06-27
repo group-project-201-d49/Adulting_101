@@ -224,10 +224,28 @@ function addElement(parent, tagName, text, className) {
   return newElement;
 }
 
-//function to divide the total skills completed by the total amount of topics to complete in order to generate the data for our status bar
-function createStatusBarData () {
-  var totalTopics = 9;
-  var percentResult =(CardTopic.totalSkillsComplete / totalTopics);
-  return Math.round(percentResult);
+// //function to divide the total skills completed by the total amount of topics to complete in order to generate the data for our status bar
+// function createStatusBarData () {
+//   var totalTopics = 9;
+//   var percentResult =(CardTopic.totalSkillsComplete / totalTopics);
+//   console.log(percentResult);
+//   return Math.round(percentResult);
+// }
+// createStatusBarData();
+
+function move() {
+  var elem = document.getElementById('myBar');
+  var width = 1;
+  var id = setInterval(frame, 10);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
 }
-createStatusBarData();
+
+
