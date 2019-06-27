@@ -17,15 +17,6 @@ main {
     height: 100%;
 }
 
-footer {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    padding: 5px;
-    width: 100%;
-}
-
-
 h2 {
     text-align: center;
     font-size: 26px;

@@ -64,7 +64,8 @@
     text-align: center;
     font-weight: bold;
     /* font-size: 26px; */
-    background: #d79133;
+    background: teal;
+    /* background: #d79133; */
 }
 
 /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
@@ -134,5 +135,10 @@ input {
 
 .whatStatus {
     text-align: center;
-    /* TODO font-size: 60px; */
+}
+
+.whatStatus a {
+    font-size: 60px;
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    color: #d79133;
 }
