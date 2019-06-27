@@ -34,7 +34,7 @@ function renderCard(aCardTopicIndex) {
     var trophyIcon = `fa fa-trophy fa-${trophyIconSize}`;
     addElement(addElement(front, 'p'), 'i', undefined, trophyIcon).style = 'color:teal';
   } else {
-    addElement(front, 'h2', `Let\'s push it and earn your trophy in ${card.topicName}!`).style = 'font-size:40px;padding:0 50px';
+    addElement(front, 'h2', `Yo, yo, yo, yo, baby-${userName}, yeah, you come here, gimme a wish, better adult fast so your life gonna get rich!`).style = 'font-size:35px;padding:0 50px';
   }
 
   for (var i = 0; i < trophyNum; i++) {
@@ -44,14 +44,14 @@ function renderCard(aCardTopicIndex) {
   var msg1;
   var msg2;
   if (trophyNum === 1) {
-    msg1 = '1 down, 2 to go!';
-    msg2 = 'Push it!';
+    msg1 = 'Oooh, baby, baby!';
+    msg2 = '1 down, 2 to go!  Get up on this!';
   } else if (trophyNum === 2) {
-    msg1 = 'You\'re doing great!';
-    msg2 = 'Just one more skill to master!';
+    msg1 = 'You really got it going!';
+    msg2 = `Just one more skill to master ${card.topicName}!`;
   } else if (trophyNum >= 3) {
-    msg1 = `Great job, ${userName}!`;
-    msg2 = `You earned a trophy for your killer ${card.topicName}!`;
+    msg1 = `${userName}, way to push it!`; // TODO
+    msg2 = `You earned a trophy for your killer ${card.topicName} skills!`;
   }
   addElement(front, 'h2', msg1);
   addElement(front, 'p', msg2);
@@ -132,8 +132,18 @@ function renderStatusChart() {
   });
 }
 
+function renderStatTitle() {
+  var statTitle = document.getElementById('StatTitle');
+  while (statTitle.firstChild) {
+    statTitle.removeChild(statTitle.firstChild);
+  }
+  var statTitle = addElement(statTitle, 'h2', `${userName}'s Adulting Status: ${createStatusBarData()}%`);
+}
+
 //Global variables
+document.getElementById('StatTitle').textContent = `Adulting 101 -${userName}'s Trophies!`;
 populateUserNameSpans();
 renderTrophyDeck();
+renderStatTitle();
 renderStatusChart();
 

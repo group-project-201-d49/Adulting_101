@@ -13,8 +13,7 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
-var userName= localStorage.Current;
-var userObject = `'${userName}'`;
+var userName='John';
 
 if (typeof localStorage.getItem(userObject) === 'string') {
 
