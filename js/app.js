@@ -13,7 +13,7 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
-var returnedUserName='';
+var userName='';
 
 //Global functions
 
@@ -31,15 +31,15 @@ var addUser = function(event) {
   var strUserName = JSON.stringify(userName);
   localStorage.setItem('Name', strUserName);
   console.log(strUserName, 'I have been stringified');
-  returnedUserName = JSON.parse(localStorage.getItem('Name'));
-  console.log(returnedUserName, 'I have been parsed');
+  userName = JSON.parse(localStorage.getItem('Name'));
+  console.log(userName, 'I have been parsed');
+  var displayName = document.querySelector('#userName');
+  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
   // return strUserName;
 };
 
 
 form.addEventListener('submit', addUser);
-
-document.getElementById("userName").returnedUserName;
 
 /**
  * Constructor function for cards
