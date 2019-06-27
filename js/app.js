@@ -13,6 +13,7 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
+var userName='';
 
 //Global functions
 
@@ -21,17 +22,24 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 
 // document.getElementById('submit-button').addEventListener('click', );
 
-// var form = document.getElementById('userLogin');
-// var addUser = function(event) {
-//   event.preventDefault();
-//   console.log(event.target.userName.value);
-//   var userName = event.target.userName.value;
-//   localStorage.setItem('Name', userName);
-//   return userName;
-// };
+var form = document.getElementById('userLogin');
 
-// form.addEventListener('submit', addUser);
-var userName = 'PushIt!';
+var addUser = function(event) {
+  event.preventDefault();
+  console.log(event.target.userName.value);
+  var userName = event.target.userName.value;
+  var strUserName = JSON.stringify(userName);
+  localStorage.setItem('Name', strUserName);
+  console.log(strUserName, 'I have been stringified');
+  userName = JSON.parse(localStorage.getItem('Name'));
+  console.log(userName, 'I have been parsed');
+  var displayName = document.querySelector('#userName');
+  displayName.textContent = `${userName}'s Adulting 101 Adventure`;
+  // return strUserName;
+};
+
+
+form.addEventListener('submit', addUser);
 
 /**
  * Constructor function for cards
