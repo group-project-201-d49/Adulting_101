@@ -2,38 +2,40 @@
 <html>
 
 <head>
-  
+
   <title>Push It Real Good (Final Project)</title>
-  <link rel='icon' href='./assets/favicon.ico' type='image/x-icon'/>
-  <link rel="stylesheet" href="./stylesheets/reset.css"/>
-  <link rel="stylesheet" href="./stylesheets/header.css"/>
-  <link rel="stylesheet" href="./stylesheets/style.css"/>
-  <link rel="stylesheet" href="./stylesheets/index.css"/>
+  <link rel='icon' href='./assets/favicon.ico' type='image/x-icon' />
+  <link rel="stylesheet" href="./stylesheets/reset.css" />
+  <link rel="stylesheet" href="./stylesheets/header.css" />
+  <link rel="stylesheet" href="./stylesheets/style.css" />
+  <link rel="stylesheet" href="./stylesheets/index.css" />
   <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"></head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
 
 <body>
 
   <header>
-    <h1>Jason's Adulting 101 Adventure</h1>
+    <h1 id="userName">Adulting 101 Adventure</h1>
     <nav>
       <ul>
-        <a class = "pages" href="./index.html">Home</a>
-        <a class = "pages" href="./trophy.html">Trophies</a>
-        <a class = "pages" href="./about-us.html">About Us</a>
+        <a class="pages" href="./index.html">Home</a>
+        <a class="pages" href="./trophy.html">Trophies</a>
+        <a class="pages" href="./about-us.html">About Us</a>
       </ul>
     </nav>
-    
+
     <form id="userLogin">
       User Name: <input id="userName" type="text" placeholder="" />
       <input id="submit" type="submit" name="newUser" value="Submit" />
-  </form>
+    </form>
   </header>
 
   <main>
     <div class="container" id="CardDeck"></div>
+    <p class="whatStatus"> <a href="./trophy.html" alt="What's my status?">What's my status?</a></p>
   </main>
-  
+
   <footer>
   
     <div>
@@ -46,10 +48,11 @@
       
         <span>&copy; 2019 .PushIt(RealGood)</span>
 
+
   </footer>
 
   <script src="./js/app.js"></script>
-  <script src="./js/home.js"></script>
+  <script src="./js/index.js"></script>
 
 </body>
 
