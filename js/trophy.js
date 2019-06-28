@@ -1,6 +1,8 @@
 'use strict';
 
 //Global variables
+// var currentUser = localStorage.Current;
+
 /**
  * this renders one card and returns the index for that card
  *
@@ -34,7 +36,7 @@ function renderCard(aCardTopicIndex) {
     var trophyIcon = `fa fa-trophy fa-${trophyIconSize}`;
     addElement(addElement(front, 'p'), 'i', undefined, trophyIcon).style = 'color:teal';
   } else {
-    addElement(front, 'h2', `Yo, yo, yo, yo, baby-${userName}, yeah, you come here, gimme a wish, better adult fast so your life gonna get rich!`).style = 'font-size:35px;padding:0 50px';
+    addElement(front, 'h2', `Yo, yo, yo, yo, baby-${currentUser}, yeah, you come here, gimme a wish, better adult fast so your life gonna get rich!`).style = 'font-size:35px;padding:0 50px';
   }
 
   for (var i = 0; i < trophyNum; i++) {
@@ -50,7 +52,7 @@ function renderCard(aCardTopicIndex) {
     msg1 = 'You really got it going!';
     msg2 = `Just one more skill to master ${card.topicName}!`;
   } else if (trophyNum >= 3) {
-    msg1 = `${userName}, way to push it!`; // TODO
+    msg1 = `${currentUser}, way to push it!`; // TODO
     msg2 = `You earned a trophy for your killer ${card.topicName} skills!`;
   }
   addElement(front, 'h2', msg1);
@@ -69,12 +71,12 @@ function renderTrophyDeck() {
   }
 }
 
-function populateUserNameSpans() {
-  var elements = document.getElementsByClassName('userName');
+function populatecurrentUserSpans() {
+  var elements = document.getElementsByClassName('currentUser');
   console.log('populate names...');
   console.log(elements.length);
   for (var i = 0; i < elements.length; i++) {
-    elements[i].textContent = userName;
+    elements[i].textContent = currentUser;
     console.log(elements[i]);
   }
 }
@@ -137,12 +139,12 @@ function renderStatTitle() {
   while (statTitle.firstChild) {
     statTitle.removeChild(statTitle.firstChild);
   }
-  var statTitle = addElement(statTitle, 'h2', `${userName}'s Adulting Status: ${createStatusBarData()}%`);
+  var statTitle = addElement(statTitle, 'h2', `${currentUser}'s Adulting Status: ${createStatusBarData()}%`);
 }
 
 //Global variables
-document.getElementById('StatTitle').textContent = `Adulting 101 -${userName}'s Trophies!`;
-populateUserNameSpans();
+document.getElementById('headerUserName').textContent = `Adulting 101 - ${currentUser}'s Trophies!`;
+populatecurrentUserSpans();
 renderTrophyDeck();
 renderStatTitle();
 renderStatusChart();

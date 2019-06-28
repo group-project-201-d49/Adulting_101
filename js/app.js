@@ -13,21 +13,22 @@ Stretch goal of a pop up window when cards are completed congratulating the user
 */
 
 //Global variables
-var userName= localStorage.Current;
-var userObject = `'${userName}'`;
+var currentUser = localStorage.Current;
+console.log(currentUser, 'Do we have a currentUser?');
+// var userObject = `'${currentUser}'`;
 
-if (typeof localStorage.getItem(userObject) === 'string') {
+// if (typeof localStorage.getItem(userObject) === 'string') {
 
-  console.log('inside the if');
-  var newUserObject = new User(userName);
-  var objectString = JSON.stringify(newUserObject);
-  localStorage.setItem(userObject, objectString);
+//   console.log('inside the if');
+//   var newUserObject = new User(currentUser);
+//   var objectString = JSON.stringify(newUserObject);
+//   localStorage.setItem(userObject, objectString);
 
-} else {
+// } else {
 
-  var existingUser = JSON.parse(localStorage.getItem(`'${userObject}'`));
-  console.log(existingUser, 'I came back again!');
-}
+//   var existingUser = JSON.parse(localStorage.getItem(`'${userObject}'`));
+//   console.log(existingUser, 'I came back again!');
+// }
 
 //Global functions
 
@@ -55,9 +56,9 @@ CardTopic.list =[];
 CardTopic.prototype.addSkill = function(aSkillName, aLink) {
   var skill = new Skill(aSkillName, aLink);
   var skillIndex = this.topicSkillList.push(skill) - 1;
-  var key = `${userName}.${this.cardTopicIndex}.${skillIndex}`;
+  var key = `${currentUser}.${this.cardTopicIndex}.${skillIndex}`;
+  console.log(typeof currentUser, 'what is the type of currentUser');
   var value = localStorage.getItem(key);
-  console.log(value);
 
   if (value) {
     skill.completed = (value === 'completed');
@@ -70,11 +71,12 @@ CardTopic.updateSkill = function(aCardTopicIndex, aSkillIndex, aCompleted) {
   CardTopic.list[aCardTopicIndex].updateSkill(aSkillIndex, aCompleted);
 };
 
-CardTopic.updateSkill = function(aSkillIndex, aCompleted) {
+CardTopic.prototype.updateSkill = function(aSkillIndex, aCompleted) {
   var skill = this.topicSkillList[aSkillIndex];
   skill.completed = aCompleted;
+  console.log(`${currentUser}`, 'looking for updateSkill');
 
-  var key = `${userName}.${this.cardTopicIndex}.${aSkillIndex}`;
+  var key = `${currentUser}.${this.cardTopicIndex}.${aSkillIndex}`;
   var value = '';
 
   if (aCompleted) {
@@ -89,7 +91,7 @@ CardTopic.totalSkillsComplete = function() {
   for (var i = 0; i < CardTopic.list.length; i++) {
     result += CardTopic.list[i].cardSkillsComplete();
   }
-  console.log('total skills complete:', result);
+  // console.log('total skills complete:', result);
   return result;
 };
 
@@ -167,8 +169,6 @@ function renderDeck() {
 }
 //TO PUT IN TROPHY.JS_______________________________________________
 
-
-//getUserName();
 createCards();
 
 /**

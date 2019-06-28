@@ -48,7 +48,6 @@ function renderCard(aCardTopicIndex) {
 
     var skill = card.topicSkillList[i];
     var li = addElement(taskList, 'li');
-    // TODO Font size for checkbox list
     // var label = addElement(li, 'label');
 
     var checkBox = addElement(li, 'input');
@@ -68,21 +67,11 @@ function handleSkillChange(event) {
   var id = event.target.id;
   var fullSkillId = id.split('.');
   CardTopic.updateSkill(fullSkillId[0], fullSkillId[1], event.target.checked);
-  console.log(fullSkillId, event.target.checked);
+  console.log('handleskillchange', fullSkillId, event.target.checked);
 }
-
-function handleSkillChange(event) {
-  var id = event.target.id;
-  var fullSkillId = id.split('.');
-  CardTopic.updateSkill(fullSkillId[0], fullSkillId[1], event.target.checked);
-  console.log(fullSkillId, event.target.checked);
-  createStatusBarData();
-}
-
 
 function renderDeck() {
   var container = document.getElementById('CardDeck');
-  console.log(container);
 
   for (var i = 0; i < CardTopic.list.length; i++) {
     container.appendChild(renderCard(i));
