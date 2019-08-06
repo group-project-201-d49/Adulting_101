@@ -1,5 +1,5 @@
 # Adulting 101
-A game-based learning and development app to motivate users to gain basic adult-level skills.
+A personalized, game-based learning and development app that motivates users to gain basic adult-level skills.
 
 ## Project title
 Adulting 101 - a one stop shop for your basic adulthood needs
