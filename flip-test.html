@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+  CSS card flip experiments based on demo in this video by Arjun Khara: https://www.youtube.com/watch?v=OV8MVmtgmoY.  To this I added 3D perspective, shadows, a more complex motion, and careful z-index transition timing for convincing overlapping animations. 
+  
+  Also, I've changed the use of the :hover pseudo class to
+  reference the card's parent element instead of the card element so that the card flips when the parent element is hovered over, not just the card itself. This eliminates the fluttering effect you can get when the card starts to flip and moves out from under the cursor.
+  
+  I've also added the use of :focus-within to make the card flip more accessible to keyboard users. 
+
+  The cards are also responsive to window size changes.
+  
+  This is a work in progress.
+-->
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale = 1">
+  <title>CSS Card Flip</title>
+  <style>
+    :root {
+      --on: initial;
+      --off: ;
+      --dev-mode: var(--off);
+
+      font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+      color-scheme: light dark;
+      color: rgba(255, 255, 255, 0.87);
+      /* background-color: #242424; */
+
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* The following rule will enable element outlines on hover to assist during development.
+    To enable/disable, set the --dev-mode variable to var(--on)/var(--off) in the :root selector above.
+
+    To enable/disable programmatically, use the following JavaScript:
+    document.documentElement.style.setProperty('--dev-mode', 'var(--on)');
+    document.documentElement.style.setProperty('--dev-mode', 'var(--off)');
+
+    If you are using Vite, you can use the following JavaScript to enable/disable
+    the outlines depending on the current environment:
+    if (import.meta.env. DEV) { // (remove the space before DEV)
+      document.documentElement.style.setProperty('--dev-mode', 'var(--on)');
+    }
+
+    If you are using Webpack, you can use the following JavaScript to enable/disable
+    the outlines depending on the current environment:
+    if (process.env. NODE_ENV === 'development') { // (remove the space before NODE_ENV)
+      document.documentElement.style.setProperty('--dev-mode', 'var(--on)');
+    }
+*/
+    *:hover {
+      outline: var(--dev-mode, dashed 0.4rem rgba(195, 0, 255, 0.33));
+    }
+
+    body {
+      background: #7092c7;
+    }
+
+    .card-deck {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .card-deck {
+        flex-direction: row;
+        height: 100vh;
+      }
+    }
+
+    /* THE card-wrapper HOLDS EVERYTHING */
+    .card-wrapper {
+      display: flex;
+      margin: 10px;
+      width: 250px;
+      height: 320px;
+      background: none;
+      perspective: 1000px;
+      filter: drop-shadow(0.4em 0.6em 0.2em rgba(0, 0, 0, 0.2)) drop-shadow(0.2em 0.25em 0.07em rgba(0, 0, 0, 0.15));
+      transition: opacity 500ms ease, transform 800ms ease, filter 800ms ease, z-index 234ms step-end;
+      z-index: 1;
+    }
+
+    /* THE CARD HOLDS THE FRONT AND BACK FACES */
+    .thecard {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1.5em;
+      transition: transform 0.8s ease;
+      transform-style: preserve-3d;
+    }
+
+    /* THE PSEUDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+    .card-wrapper:hover,
+    .card-wrapper:focus-within {
+      filter: drop-shadow(1.5em 3em 2em rgba(0, 0, 0, 0.35)) drop-shadow(1.5em 3em 0.6em rgba(0, 0, 0, 0.15));
+      z-index: 2;
+    }
+
+    .card-wrapper:hover .thecard,
+    .card-wrapper:focus-within .thecard {
+      transform: rotateY(180deg) translateZ(-100px) translateY(-0.7em) rotate(0.025turn);
+      /* transform: translateZ(+100px) rotateY(-180deg); */
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1.4em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      /* overflow: hidden; */
+    }
+
+    /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+    .card-front {
+      background: #ffc728;
+      color: #000;
+    }
+
+    /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+    .card-back {
+      background: #fafafa;
+      color: #333;
+      text-align: center;
+      transform: rotateY(180deg);
+    }
+
+    .card-front::before {
+      content: "";
+      position: absolute;
+      --spacer: .9em;
+      top: var(--spacer);
+      bottom: var(--spacer);
+      left: var(--spacer);
+      right: var(--spacer);
+      border: .13em solid currentColor;
+      border-radius: .9em;
+      transform: translateZ(3rem);
+    }
+
+    /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+    .card-front h1,
+    .card-back h1 {
+      transform: translateZ(6rem);
+      font-family: 'zilla slab', sans-serif;
+      padding: 30px;
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .card-front p,
+    .card-back p {
+      /* transform: translateZ(1rem); */
+      font-family: 'zilla slab', sans-serif;
+      padding: 20px;
+      font-weight: normal;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .card-front button,
+    .card-back button {
+      transform: translateZ(3rem);
+    }
+
+    /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+  </style>
+</head>
+
+<body>
+
+  <div class="card-deck">
+    <div class="card-wrapper">
+      <div class="thecard">
+        <div class="card-front">
+          <h1>Front</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla fugit voluptatum illo eum.</p>
+        </div>
+        <div class="card-back" tabindex="0">
+          <h1>Back</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit necessitatibus facilis maiores error
+            deserunt quod deleniti, aspernatur, ratione nam soluta ab!</p>
+          <button>Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+
+      <div class="thecard">
+        <div class="card-front">
+          <h1>Front of Card</h1>
+          <p>This is the front of the card. It contains important information. Please see overleaf for more details.</p>
+        </div>
+        <div class="card-back" tabindex="0">
+          <h1>Back of Card</h1>
+          <p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
+          <button>Submit</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+
+      <div class="thecard">
+        <div class="card-front">
+          <h1>Front of Card</h1>
+          <p>This is the front of the card. It contains important information. Please see overleaf for more details.</p>
+        </div>
+        <div class="card-back" tabindex="0">
+          <h1>Back of Card</h1>
+          <p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
+          <button>Submit</button>
+        </div>
+
+      </div>
+    </div>
+
+
+</body>
+
+</html>
